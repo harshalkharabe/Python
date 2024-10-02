@@ -63,6 +63,19 @@ for row in range(1,6):
 
 print()
 
+# 1 2 3 4 5
+# 1 2 3 4
+# 1 2 3
+# 1 2
+# 1
+for row in range(5,0,-1):
+    for col in range(1,6):
+        if col<=row:
+            print(col,end=' ')
+    print()
+
+print()
+
 #         1
 #       2 1
 #     3 2 1
