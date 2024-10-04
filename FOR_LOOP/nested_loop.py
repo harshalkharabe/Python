@@ -160,3 +160,16 @@ for row in range(1,6):
             print("*",end=' ')
     spaces-=1
     print()
+
+spaces = 0
+num = 6
+for row in range(1,6):
+    for s in range(spaces):
+        print(' ',end=' ')
+    for col1 in range(1,num):
+        print(col1,end=' ')
+    for col2 in range(num-2,0,-1):
+        print(col2,end=' ')
+    spaces+=1
+    num-=1
+    print()
