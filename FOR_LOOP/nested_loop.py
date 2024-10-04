@@ -136,3 +136,27 @@ for row in range(5,0,-1):
 
 print()
 
+spaces = 0
+for row in range(5,0,-1):
+    for col1 in range(1,6):
+        if col1<=row:
+            print("*",end=' ')
+    for s in range(spaces):
+        print(' ',end=' ')
+    for col2 in range(5,0,-1):
+        if col2<=row:
+            print("*",end=' ')
+        else:
+            print(' ',end=' ')
+    spaces+=1            
+    print()
+
+spaces = 4
+for row in range(1,6):
+    for s in range(spaces):
+        print(end=" ")
+    for col1 in range(1,6):
+        if col1<=row:
+            print("*",end=' ')
+    spaces-=1
+    print()
