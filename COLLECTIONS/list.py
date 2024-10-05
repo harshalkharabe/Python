@@ -55,3 +55,21 @@ print()
 print("Backward indexing")
 for i in range(-5,0,1):
     print(l1[i],end=' ')
+
+print()
+
+print("Sum : ",sum(x:=list(range(10,101,10))),"list : ",x)
+
+# Write a program to add or print sum of elements or items to find avg of list
+l1 = list([12,45,3,67,89])
+sum,min,max = 0,l1[0],0
+for i in range(len(l1)):
+    if max<l1[i]:
+        max = l1[i]
+    if min>l1[i]:
+        min=l1[i]
+    sum = sum + l1[i]
+print(f"Sum of all items in list {l1} is {sum}")
+print(f"Average of list {l1} is {sum/len(l1)}")
+print(f"Maximun in list : {max}")
+print(f"Minimum in list : {min}")
