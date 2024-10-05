@@ -73,3 +73,14 @@ print(f"Sum of all items in list {l1} is {sum}")
 print(f"Average of list {l1} is {sum/len(l1)}")
 print(f"Maximun in list : {max}")
 print(f"Minimum in list : {min}")
+
+
+l1 = [12,45,3,41,67,34,89]
+length = len(l1)
+if length%2==0:
+    i = length//2
+    median = (l1[i]+l1[i-1])/2
+else:
+    i = length//2
+    median = l1[i]
+print(f"Median : {median}")
