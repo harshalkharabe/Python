@@ -86,3 +86,28 @@ else:
     median = l1[i]
 print(f"Median : {median}")
 
+list1 = list(range(1,51,1))
+l1 = []
+l2 = []
+count = 0
+for i in list1:
+    if i%2==0:
+        l1.append(i)
+    else:
+        l2.append(i)
+    count += 1
+    print(f"Numbers of elements in list : {count}")
+print(f"Even numbers list : {l1}")
+print(f"Odd numbers list : {l2}")
+
+list1 = [12,34,10,2,34]
+mean = 0
+for i in list1:
+    mean += i
+print(f"Mean : {mean/len(list1)}")
+
+
+import statistics
+print(statistics.median([10,17,27,89]))
+print(statistics.mode([122,17,27,89]))
+print(statistics.mean([10,17,27,89]))
