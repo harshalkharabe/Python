@@ -111,3 +111,10 @@ import statistics
 print(statistics.median([10,17,27,89]))
 print(statistics.mode([122,17,27,89]))
 print(statistics.mean([10,17,27,89]))
+
+list1 = [23,45,12,32,9,2]
+for i in range(len(list1)):
+    for j in range(i+1,len(list1)):
+        if list1[i]>list1[j]:
+            list1[i],list1[j]=list1[j],list1[i]
+print(list1)
