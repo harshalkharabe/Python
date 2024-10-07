@@ -60,7 +60,7 @@ print()
 
 print("Sum : ",sum(x:=list(range(10,101,10))),"list : ",x)
 
-# Write a program to add or print sum of elements or items to find avg of list
+# Write a program to add or print sum,min,max & average of elements or items to find avg of list
 l1 = list([12,45,3,67,89])
 sum,min,max = 0,l1[0],0
 for i in range(len(l1)):
@@ -75,6 +75,7 @@ print(f"Maximun in list : {max}")
 print(f"Minimum in list : {min}")
 
 
+#WAP to find median of l1
 l1 = [12,45,3,41,67,34,89]
 length = len(l1)
 if length%2==0:
@@ -84,3 +85,4 @@ else:
     i = length//2
     median = l1[i]
 print(f"Median : {median}")
+
