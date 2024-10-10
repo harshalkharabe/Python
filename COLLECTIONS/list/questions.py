@@ -123,3 +123,74 @@ print(f"After removing duplicates : {l2}")
 l1 = [1,2,3,4,5,5,4,7,8,9]
 l2 = set(l1)
 print(f"After Removing Duplicates : {l2}")
+
+
+#---------------------------------------------------------------------
+# Write a Python program that takes a sentence as input and prints the words of the sentence in reverse order.
+
+s = "python is owsome language"
+print(s)
+l1 = s.split(' ')
+l2 = []
+print(l1)
+for i in range(len(l1)-1,-1,-1):
+    l2.append(l1[i])
+print(l2)
+s1 = ' '.join(l2)
+print(s1)
+
+
+#---------------------------------------------------------------------
+# Write a Python program that takes a sentence as input and prints the words of the sentence in reverse order.
+#----------------- SECOND WAY -----------------------------------
+
+s = "python is owsome language"
+print(s)
+l1 = s.split(' ')
+s1 = l1[::-1]
+s1 = ' '.join(s1)
+print(f"Reverse string : {s1}")
+
+#=======================================================================
+# Write a Python program to find the sum of all even numbers in a given list.
+
+l1 = [10,20,30,25,45]
+s = 0
+for i in l1:
+    if i%2==0:
+        s += i
+print(f"Sum of even numbers in list is {s}")
+
+
+#========================================================================
+# Write a Python program that prints the first n numbers in the Fibonacci sequence using a for or while loop.
+#------------FOR LOOP--------------------------------#
+n = 10
+n1 = 0
+n2 = 1
+n3 = 0
+print(f"Fibonacci series : {n1} {n2}",end=' ')
+for i in range(n):
+    n3 = n1 + n2
+    print(n3,end=' ')
+    n1,n2 = n2,n3
+print()
+
+#========================================================================
+# Write a Python program that prints the first n numbers in the Fibonacci sequence using a for or while loop.
+#------------WHILE LOOP--------------------------------#
+n = 10
+n1 = 0
+n2 = 1
+n3 = 0
+count = 0
+print(f"Fibonacci series : {n1} {n2}",end=' ')
+while count<n:
+    n3 = n1 + n2
+    print(n3,end=' ')
+    n1,n2 = n2,n3
+    count +=1 
+print()
+
+#=====================================================================
+# Write a Python program to transpose a 2D matrix using loops and lists.
