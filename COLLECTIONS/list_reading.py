@@ -53,3 +53,41 @@ a = enumerate(list1)
 
 val = next(a)
 print(val,type(val))
+
+# list1 = list([int(input("Enter a number : ")) for i in range(1,6)])
+# print(list1)
+# list1.append(12)
+# print(list1)
+# list2 = [12,54,6,734,23,221]
+# list2.append([23,1])
+# print(list2)
+
+#append without using append function
+list3 = [1,2]
+list3.append(list([int(input("Enter number : ")) for i in range(1,6)]))
+print(list3)
+
+list3[len(list3):len(list3)]=[2]
+print(list3)
+
+# n = int(input("How many numbers you want to enter : "))
+# list4 = []
+# oc,ec=0,0
+# for i in range(n):
+#     num = int(input("Enter a number : "))
+#     list4.append(num)
+#     if num % 2 == 0:
+#         ec+=1
+#     else:
+#         oc+=1
+# print(f"Even count : {ec} and Odd count : {oc}")
+# print(f"List : {list4}")
+
+# list5 = [1,2,4]
+# list5.extend((1,2,8))
+# print(list5)
+
+x = "Harshal"
+l1 = []
+l1.extend(x)
+print(l1)
