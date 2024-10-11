@@ -193,4 +193,84 @@ while count<n:
 print()
 
 #=====================================================================
-# Write a Python program to transpose a 2D matrix using loops and lists.
+# Find the Unique Element Write a Python function that takes a list where every element appears twice except for one element, which appears only once. Return that unique element.
+
+l1 = [1,33,3,2,4,1,4,2]
+l2 = []
+l = len(l1)-1
+for i in range(len(l1)):
+    for j in range(i+1,len(l1)):
+        if l1[i]==l1[j]:
+            l2.append(l1[i])
+print(l2)
+l3=[]
+for i in l1:
+    if i not in l2:
+        l3.append(i)
+print(l3)
+
+#========================================================================
+#Write a Python function that takes two sorted lists and merges them into a single sorted list.
+l1 = [1,23,3]
+l2 = [2,4,6]
+l3 = l1 + l2
+print(l3)
+for i in range(len(l3)):
+    for j in range(i+1,len(l3)):
+        if l3[i]>l3[j]:
+            l3[i],l3[j]=l3[j],l3[i]
+print(f'lists after merge and sorted {l3}')
+print()
+
+#================================================================================
+# Write a Python function that checks if there are any duplicates in a list and returns True if there are, and False otherwise.
+l1 = [1,2,3,4,5,11]
+bool = False
+for i in range(len(l1)):
+    for j in range(i+1,len(l1)):
+        if l1[i]==l1[j]:
+            bool=True
+            break
+print(f"{l1} contains duplicate elements : {bool}")
+
+#==============================================================================
+# Write a Python program that takes a string input and counts the number of vowels and consonants in it (ignore spaces and punctuation).
+str = "Hello World!"
+vcount,ccount=0,0
+for i in str:
+    if i in "AEIOUaeiou":
+        vcount += 1
+    elif (i>='A' and i<='Z') or (i>='a' and i<='z'):
+        ccount +=1
+print(f"Vowels : {vcount} Consonent : {ccount}")
+
+#===================================================================
+# Write a python program to check the string is palandriom or not
+s1 = "madam1"
+s2 = ""
+for i in s1[::-1]:
+    s2 = s2+i
+print(s2)
+if s1==s2:
+    print(f"it is a plandrom string {s2}")
+else:
+    print(f"it is not a plandrom string {s2}")
+
+# Write a python program to check the string is palandriom or not
+#-----------------Second Way----------------#
+
+s1 = "madam"
+s2 = s1[::-1]
+ans = "Palandriom" if s1==s2 else "Not palandriom" 
+print(ans)
+
+# Write a python program to check the string is palandriom or not
+s1 = ["racecar", "hello", "level", "world"]
+s2 =[]
+for i in range(len(s1)):
+    s3 = ''
+    for j in s1[i][::-1]:
+        s3 = s3+j
+    if s3==s1[i]:
+        s2.append(s3)
+

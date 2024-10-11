@@ -173,3 +173,27 @@ for row in range(1,6):
     spaces+=1
     num-=1
     print()
+
+#====================================================================
+#     *
+#    ***
+#   *****
+#  *******
+# *********
+#  *******
+#   *****
+#    ***
+#     *
+
+for i in range(1,6):
+    for j in range(5,0,-1):
+        if j<=i:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    for j in range(1,6):
+        if j<i:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    print()
