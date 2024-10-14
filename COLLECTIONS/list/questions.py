@@ -1,6 +1,7 @@
-#Find the Second Largest Number in a List
+#! Find the Second Largest Number in a List
 # Write a Python program to find the second largest number in a list.
 #----------- FIRST WAY --------------------#
+
 list1 = [12,56,90,43,90,21]
 max = max(list1)
 smax = 0
@@ -274,3 +275,40 @@ for i in range(len(s1)):
     if s3==s1[i]:
         s2.append(s3)
 
+#======================================================================e 
+#Flatten a Nested List Write a Python function that takes a nested list and returns a flat list containing all the elements.
+
+l1 = [[1, 2, [3, 4]], [5, 6], 7]
+l2 = []
+print(isinstance(l2,float))
+for i in l1:
+    if isinstance(i,list): # isinstance check karte ki jar i cha type list aasel tr true nhi tr false
+        print(i,type(i))
+        for j in i:
+            print(j)
+            if j is isinstance(j,list):
+                l2.extend(j)
+            else:
+                l2.append(j)
+    else:
+        l2.append(i)
+print(l2)
+
+#================= SECOND WAY ============================
+def flatten_list(nested_list):
+    flat_list = []
+    for element in nested_list:
+        if isinstance(element, list):
+            # Recursively flatten the nested list
+            flat_list.extend(flatten_list(element))
+        else:
+            # Append non-list elements directly
+            flat_list.append(element)
+    return flat_list
+
+nested_list = [[1, 2, [3, 4]], [5, 6], 7]
+result = flatten_list(nested_list)
+print("Flattened List:", result)
+
+#=============================================================================
+#
