@@ -236,9 +236,9 @@ print(f"{l1} contains duplicate elements : {bool}")
 
 #==============================================================================
 # Write a Python program that takes a string input and counts the number of vowels and consonants in it (ignore spaces and punctuation).
-str = "Hello World!"
+str1 = "Hello World!"
 vcount,ccount=0,0
-for i in str:
+for i in str1:
     if i in "AEIOUaeiou":
         vcount += 1
     elif (i>='A' and i<='Z') or (i>='a' and i<='z'):
@@ -311,4 +311,11 @@ result = flatten_list(nested_list)
 print("Flattened List:", result)
 
 #=============================================================================
-#
+#Convert decimal to binary
+val = '0b'
+num = 10
+while num>0:
+    r = num%2
+    val = val + str(r)
+    num//=2
+print(val)
