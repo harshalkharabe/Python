@@ -545,3 +545,137 @@ nums = [1, 2, 2, 3]
 print(is_monotonic(nums))  # Output: True
 
 #===============================================================================
+# Symbol       Value
+# I             1
+# V             5
+# X             10
+# L             50
+# C             100
+# D             500
+# M             1000
+# Input: s = "III"
+# Output: 3
+# Explanation: III = 3.
+
+class Solution(object):
+    def romanToInt(self, s1):
+        s = 0
+        I = 1
+        V = 5
+        X = 10
+        L = 50
+        C = 100
+        D = 500
+        M = 1000
+        for i in range(len(s1)):
+            if s1[i] == "I":
+                if "X" in s1[i+1:]:
+                    X = 9
+                elif "V" in s1[i+1:]:
+                    V = 4
+                else:
+                    s += I
+            elif s1[i]=="V":
+                s += V
+            elif s1[i]=="X":
+                if "L" in s1[i+1:]:
+                    L= 40
+                elif "C" in s1[i+1:]:
+                    C = 90
+                else:
+                    s += X
+            elif s1[i]=="L":
+                s += L
+            elif s1[i]=="C":
+                if "D" in s1[i+1:]:
+                    D = 400
+                elif "M" in s1[i+1:]:
+                    M = 900
+                else:
+                    s += C
+            elif s1[i]=="D":
+                s += D
+            elif s1[i]=="M":
+                s += M
+            else:
+                s += 0
+        return s
+        
+# #======================================================================
+# Given a string s consisting of words and spaces, return the length of the last word in the string.
+# A word is a maximal 
+# substring
+#  consisting of non-space characters only.
+# Input: s = "Hello World"
+# Output: 5
+# Explanation: The last word is "World" with length 5.
+
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        l1 = s.split()
+        for i in l1:
+            length = len(i)
+        return length
+
+a = Solution()
+# print(a.lengthOfLastWord("Harshal Kharabe"))
+
+#==================================================================
+print(sep='\n\n')
+# You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.
+# You are given a list of strings operations, where operations[i] is the ith operation you must apply to the record and is one of the following:
+# An integer x.
+# Record a new score of x.
+# '+'.
+# Record a new score that is the sum of the previous two scores.
+# 'D'.
+# Record a new score that is the double of the previous score.
+# 'C'.
+# Invalidate the previous score, removing it from the record.
+# Return the sum of all the scores on the record after applying all the operations.
+# The test cases are generated such that the answer and all intermediate calculations fit in a 32-bit integer and that all operations are valid.
+
+# Input: ops = ["5","2","C","D","+"]
+# Output: 30
+# Explanation:
+# "5" - Add 5 to the record, record is now [5].
+# "2" - Add 2 to the record, record is now [5, 2].
+# "C" - Invalidate and remove the previous score, record is now [5].
+# "D" - Add 2 * 5 = 10 to the record, record is now [5, 10].
+# "+" - Add 5 + 10 = 15 to the record, record is now [5, 10, 15].
+# The total sum is 5 + 10 + 15 = 30.
+
+class Solution(object):
+    @staticmethod
+    def is_integer(s):
+        try:
+            int(s)
+            return True
+        except ValueError:
+            return False
+    def calPoints(self, operations):
+        l1 = []
+        s = 0
+        for i in operations:
+            if Solution.is_integer(i):
+                i = int(i)
+                l1.append(i)
+            elif i == "+":
+                if len(l1)>=2:
+                    s = l1[-1]+l1[-2]
+                    l1.append(s)
+                else:
+                    s = l1[-1]
+                    l1.append(s)
+            elif i == 'D':
+                p = l1[-1]*2
+                l1.append(p)
+            elif i == 'C':
+                del l1[-1]
+            else :
+                pass
+        s1 = sum(l1)
+        return s1
+
+a = Solution()
+print(a.calPoints(["5","2","C","D","+"]))
