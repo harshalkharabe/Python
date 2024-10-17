@@ -134,34 +134,35 @@ print(f"List after removing {value} {list1}")
 
 #==================================================================
 # Write a program to implement stack data structure using list
-list1=[]
-while True:
-    print("1.Push")
-    print("2.Pop")
-    print("3.Display")
-    print("4.Exit")
-    print("=============================================================")
-    opt = int(input("Enter operation want to perform : "))
-    print("=============================================================")
-    match opt:
-        case 1:
-            val = int(input("Enter number to add : "))
-            list1.append(val)
-            print(f"{val} Push Successfully")
-        case 2:
-            if len(list1)==0:
-                print("List is empty")
-            else:
-                res = list1.pop()
-                print(f"{res} Pop Successfully")
-        case 3:
-            print(f"{list1} Retrive successfully")
-        case 4:
-            break
-        case _:
-            print("Invalid Option")
+# list1=[]
+# while True:
+#     print("1.Push")
+#     print("2.Pop")
+#     print("3.Display")
+#     print("4.Exit")
+#     print("=============================================================")
+#     opt = int(input("Enter operation want to perform : "))
+#     print("=============================================================")
+#     match opt:
+#         case 1:
+#             val = int(input("Enter number to add : "))
+#             list1.append(val)
+#             print(f"{val} Push Successfully")
+#         case 2:
+#             if len(list1)==0:
+#                 print("List is empty")
+#             else:
+#                 res = list1.pop()
+#                 print(f"{res} Pop Successfully")
+#         case 3:
+#             print(f"{list1} Retrive successfully")
+#         case 4:
+#             break
+#         case _:
+#             print("Invalid Option")
 
 
+#==========================================================================
 l1 = ['A','a','B','b','C','c']
 l1.sort()
 print(l1)
@@ -169,3 +170,30 @@ l1.sort(reverse=True)
 print(l1)
 l1.sort(key=str.upper)
 print(l1)
+
+t1 = (12,34,21,5,6,78,78,89)
+t2 = sorted(t1)
+print(t1,t2)
+
+l1 = []
+l1.append('_')
+print(l1)
+
+#===================================================================
+# class Solution(object):
+#     def removeDuplicates(self, nums):
+#         nums.sort()
+#         for i in nums:
+#             while True:
+#                 if nums.count(i)>1:
+#                     nums.remove(i)
+#                 else:
+#                     break
+        
+#         return len(nums)
+
+# a = Solution()
+# print(a.removeDuplicates([0,0,1,1,1,2,2,3,3,4,5]))
+
+#========================================================================
+
