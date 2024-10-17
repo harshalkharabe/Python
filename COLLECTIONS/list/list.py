@@ -120,3 +120,52 @@ for i in range(len(list1)):
 print(list1)
 
 
+#==================================================================
+# Write a program to remove all occurences of given value from list
+list1=[10,20,30,10,10,20,40,50,60,10,10,90,80]
+value=10
+
+while True:
+    if value in list1:
+        list1.remove(value)
+    else:
+        break
+print(f"List after removing {value} {list1}")
+
+#==================================================================
+# Write a program to implement stack data structure using list
+list1=[]
+while True:
+    print("1.Push")
+    print("2.Pop")
+    print("3.Display")
+    print("4.Exit")
+    print("=============================================================")
+    opt = int(input("Enter operation want to perform : "))
+    print("=============================================================")
+    match opt:
+        case 1:
+            val = int(input("Enter number to add : "))
+            list1.append(val)
+            print(f"{val} Push Successfully")
+        case 2:
+            if len(list1)==0:
+                print("List is empty")
+            else:
+                res = list1.pop()
+                print(f"{res} Pop Successfully")
+        case 3:
+            print(f"{list1} Retrive successfully")
+        case 4:
+            break
+        case _:
+            print("Invalid Option")
+
+
+l1 = ['A','a','B','b','C','c']
+l1.sort()
+print(l1)
+l1.sort(reverse=True)
+print(l1)
+l1.sort(key=str.upper)
+print(l1)

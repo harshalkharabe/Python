@@ -679,3 +679,30 @@ class Solution(object):
 
 a = Solution()
 print(a.calPoints(["5","2","C","D","+"]))
+
+
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        l1 = []
+        n1 = nums1
+        n2 = nums2
+        for i in range(m):
+            l1.append(n1[i])
+        for j in range(n):
+            l1.append(n2[j])
+        l1.sort()
+        return l1
+        
+a = Solution()
+print(a.merge([0],0,[1],1))
+
+#===============================================
+# Given a string s, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.
+# Input: s = "abab"
+# Output: true
+# Explanation: It is the substring "ab" twice.
+
+def repeatedSubstringPattern(s):
+    doubled = (s + s)[1:-1]  # Remove first and last character from s + s
+    return s in doubled
+

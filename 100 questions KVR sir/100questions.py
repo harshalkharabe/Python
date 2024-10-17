@@ -72,3 +72,24 @@ for i in range(-1,-(len(l1)+1),-1):
 
 l1[0:3]=[12]
 print(l1)
+
+
+list1=[10,20,30,10,10,20,40,50,60,10,10,90,80]
+value=10
+print(list1)
+
+while True:
+    if value in list1:
+        list1.remove(10)
+    else:
+        break
+print(list1)
+
+l1 = [10,30,40,20,50]
+l1.pop()
+print(l1)
+l1.pop(0)
+print(l1)
+l1.pop(1)
+print(l1)
+
