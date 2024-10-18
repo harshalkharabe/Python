@@ -706,3 +706,52 @@ def repeatedSubstringPattern(s):
     doubled = (s + s)[1:-1]  # Remove first and last character from s + s
     return s in doubled
 
+
+#================================================================================
+# Input: nums = [0,0,1,1,1,1,2,3,3]
+# Output: 7, nums = [0,0,1,1,2,3,3,_,_]
+# Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
+# It does not matter what you leave beyond the returned k (hence they are underscores).
+
+class Solution(object):
+    def removeDuplicates(self, nums):
+        num = []
+        for i in nums:
+            if i not in num:
+                num.append(i)
+        c = []
+        for i in num:
+            x = nums.count(i)
+            c.append(x)
+        c.sort()
+        for i in nums:
+            while True:
+                if nums.count(i)>2:
+                    nums.remove(i)
+                else:
+                    break
+
+        return len(nums)
+        
+a = Solution()
+print(a.removeDuplicates([0,0,1,1,1,1,2,3,3]))
+
+#=====================================================================================
+# Input: accounts = [[1,2,3],[3,2,1]]
+# Output: 6
+# Explanation:
+# 1st customer has wealth = 1 + 2 + 3 = 6
+# 2nd customer has wealth = 3 + 2 + 1 = 6
+# Both customers are considered the richest with a wealth of 6 each, so return 6.
+
+
+class Solution(object):
+    def maximumWealth(self, accounts):
+        total = 0
+        for i in accounts:
+            if sum(i)>total:
+                total = sum(i)
+        return total
+        
+a = Solution()
+print(a.maximumWealth([[1,2,3],[3,2,1]]))
