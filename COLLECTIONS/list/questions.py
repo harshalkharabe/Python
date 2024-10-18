@@ -744,7 +744,6 @@ print(a.removeDuplicates([0,0,1,1,1,1,2,3,3]))
 # 2nd customer has wealth = 3 + 2 + 1 = 6
 # Both customers are considered the richest with a wealth of 6 each, so return 6.
 
-
 class Solution(object):
     def maximumWealth(self, accounts):
         total = 0
@@ -755,3 +754,38 @@ class Solution(object):
         
 a = Solution()
 print(a.maximumWealth([[1,2,3],[3,2,1]]))
+
+#=================================================================
+# Input: mat = [[1,2,3],
+#               [4,5,6],
+#               [7,8,9]]
+# Output: 25
+# Explanation: Diagonals sum: 1 + 5 + 9 + 3 + 7 = 25
+# Notice that element mat[1][1] = 5 is counted only once.
+
+mat =  [[7,3,1,9],
+        [3,4,6,9],
+        [6,9,6,6],
+        [9,5,8,5]]
+class Solution(object):
+    def diagonalSum(self, mat):
+        sum = 0
+        for i in range(len(mat)):
+            for j in range(len(mat)):
+                if i==j:
+                    sum = sum + mat[i][j]
+        for i in range(-1,-(len(mat)+1),-1):
+            for j in range(len(mat)):
+                if i==-(j+1):
+                    sum = sum + mat[i][j]
+
+        if len(mat)%2==0:
+            return sum
+        else:
+            l = len(mat)//2
+            sum = sum - mat[l][l]
+            return sum
+a = Solution()
+print("Sum of Diagonal elements : ",a.diagonalSum(mat))
+
+#========================================================================

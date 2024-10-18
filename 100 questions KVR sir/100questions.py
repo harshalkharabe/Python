@@ -136,4 +136,81 @@ for i in range(len(l1)-1,-1,-1):
 print(l1)
 
 # # 15. Write a Python program to shuffle and print a specified list.
+l1 = [12,3,45,66,789,0]
+l1.sort()
+print(l1)
 
+#========================================================================
+# 16. Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers between 1 and 30 (both included). 
+
+l1 = list(range(1,31))
+for i in l1:
+    if i<=5 or i>=25:
+        print(f"{i} --> {i*i}")
+
+# 17. Write a Python program to generate and print a list except for the first 5 elements, where the values are square of numbers between 1 and 30 (both included). 
+
+l1 = list(range(1,31))
+s1 = list([i*i for i in range(1,31)])
+# for i in range(5):
+#     val = int(input("Enter value : "))
+#     if val in l1 or val in s1:
+#         print(f"Present in list")
+#     else:
+#         print("Not present")
+
+# 18. Write a Python program to generate all permutations of a list in Python.
+
+
+
+# 19. Write a Python program to get the difference between the two lists. 
+
+l1 = [1,2,3,4,5,6,7,8,9,]
+l2 = [11,12,8,9,10]
+l3 =[]
+for i in l1:
+    if i not in l2:
+        l3.append(i)
+print(l1,l2,l3,sep='\n')
+
+# 20. Write a Python program access the index of a list.
+l1 = list(range(1,11))
+for i in range(len(l1)):
+    print(i,end=' ')
+
+
+# 21. Write a Python program to convert a list of characters into a string. 
+
+l1 = ['H','a','r','s','h','a','l']
+s = ''
+for i in l1:
+    s += i
+print(f"After Converting list :{l1} into string : {s}")
+
+# 22. Write a Python program to find the index of an item in a specified list. 
+
+
+# 23. Write a Python program to flatten a shallow list. 
+
+l1 = [[22,33,44],[12,34,56,9],[1,2,3,4,5,6]]
+l2 = []
+
+for i in l1:
+    for j in i:
+        l2.append(j)
+l2.sort()
+print("Flatten : ",l2)
+
+# 24. Write a Python program to append a list to the second list. 
+
+l1 = [1,2,3,4,5,6,7,8,9,10,]
+l2 = []
+for i in l1:
+    l2 = l2 + [i]
+print("After appending 1st list into 2nd : ",l2)
+
+# 25. Write a Python program to select an item randomly from a list. 
+import random
+list1 = ["Harshal","Sagar","Aniket","Prathamesh","Kunal"]
+l1 = random.choice(list1)
+print(l1)
