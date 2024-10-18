@@ -214,3 +214,65 @@ import random
 list1 = ["Harshal","Sagar","Aniket","Prathamesh","Kunal"]
 l1 = random.choice(list1)
 print(l1)
+
+# 26. Write a python program to check whether two lists are circularly identical.
+
+
+
+# 27. Write a Python program to find the second smallest number in a list. 
+
+l1 = [12,34,56,78,9,2,2,2]
+m = min(l1)
+c = l1.count(m)
+l1.sort()
+print(f"Second Smallest : {l1[c]}")
+
+#=================SECOND WAY=========================
+l1 = [12,34,56,78,9,2,2,2]
+min = l1[0]
+smin = l1[0]
+for i in l1:
+    if i<min:
+        smin=min
+        min = i
+    if i<smin<min:
+        smin=i
+    
+print(f"Min : {min} Second Min : {smin}")
+    
+
+# 28. Write a Python program to find the second largest number in a list. 
+
+l1 = [12,34,5,21,45,76,21,76]
+m = max(l1)
+c = l1.count(m)
+l1.sort()
+print(f"Second Maximum : {l1[-(c+1)]}")
+
+l2 = [12,34,5,21,45,76,21,76]
+m = 0
+smax = 0
+for i in l2:
+    if i>m:
+        smax=m
+        m = i
+    if m>i>smax:
+        smax=i
+print(f"Max {m} Second Max : {smax}")
+
+# 29. Write a Python program to get unique values from a list. 
+
+l1 = [12,34,4,56,78,56,65,5,4,56,64,67,12,543,4]
+print("unique values : ",end=' ')
+for i in l1:
+    if l1.count(i)==1:
+        print(i,end=' ')
+
+# 30. Write a Python program to get the frequency of the elements in a list.
+print()
+l1 = [12,34,4,56,78,56,65,5,4,56,64,67,12,543,4]
+dict1 = {}
+for i in l1:
+    dict1[i] = l1.count(i)
+print("Frequency of the elements : ",dict1)
+
