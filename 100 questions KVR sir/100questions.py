@@ -277,3 +277,8 @@ for i in l1:
 print("Frequency of the elements : ",dict1)
 
 #==============================================================================
+# 31. Write a Python program to count the number of elements in a list within a specified range.
+l1 = [12,3,54,22,17,20,14,4,6,7,9,8]
+for i in range(3,21):
+    if i in l1:
+        print(i,end=' ')
