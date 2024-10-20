@@ -854,4 +854,21 @@ print(l1)
 
 
 #===============================================================================
+# from collections import Counter
+# class Solution(object):
+#     def majorityElement(self, nums):
+#         counter = Counter(nums)
+#         return max(counter, key=counter.get)
+
+
+
+class Solution(object):
+    def rotate(self, nums, k):
+        for i in range(k):
+            item = nums.pop()
+            nums.insert(0,item)
+        return nums
+        
+a = Solution()
+print(a.rotate([1,2,3,4,5,6,7],3))
 
