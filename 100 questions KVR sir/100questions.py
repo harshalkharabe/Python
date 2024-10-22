@@ -283,3 +283,72 @@ for i in range(3,21):
     if i in l1:
         print(i,end=' ')
 
+#=================================================================================
+# 32. Write a Python program to check whether a list contains a sublist.
+
+
+
+#=================================================================================
+# 33. Write a Python program to generate all sublists of a list. 
+
+
+#=================================================================================
+# 35. Write a Python program to create a list by concatenating a given list which range goes from 1 to n. 
+# 	Sample list : ['p', 'q']
+# 	n =5
+# 	Sample Output : ['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
+print()
+s1 = ['p','q']
+n=5
+s2 = []
+for i in range(n):
+    s2.append(s1[0]+str(i+1))
+    s2.append(s1[1]+str(i+1))
+print(s2)
+
+#=================================================================================
+# 36. Write a Python program to get variable unique identification number or string. 
+
+#=================================================================================
+# 37. Write a Python program to find common items from two lists.
+l1 = [3,4,5,6,7,8]
+l2 = [1,2,3,4,5,8]
+l3 = []
+for i in l1:
+    if i in l2:
+        l3.append(i)
+print(l3)
+
+#=================================================================================
+# 38. Write a Python program to change the position of every n-th value with the (n+1)th in a list. 
+# 	Sample list: [0,1,2,3,4,5]
+# 	Expected Output: [1, 0, 3, 2, 5, 4]
+
+l1 = [0,1,2,3,4,5]
+i=0
+while i<len(l1)-1:
+    l1[i],l1[i+1]=l1[i+1],l1[i]
+    i+=2
+print(l1)
+#=================================================================================
+# 39. Write a Python program to convert a list of multiple integers into a single integer. 
+# 		Sample list: [11, 33, 50]
+# 		Expected Output: 113350
+
+l1 = [11,32,50]
+digit = 0
+for num in l1:
+    num1=num
+    c = 0
+    while num>0:
+        c+=1
+        num//=10
+    print(c)
+    digit = (digit*(10**c))+num1
+    print(digit)
+print(digit)
+    
+
+
+#=================================================================================
+# 40. Write a Python program to split a list based on first character of word.      

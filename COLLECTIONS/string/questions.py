@@ -65,7 +65,7 @@
 s1 = input("Enter input : ")
 s2 = ''
 i=0
-while i<len(s1)-1:
+while i<len(s1):
     digit = s1[i]
     i+=1
     ch = s1[i]
