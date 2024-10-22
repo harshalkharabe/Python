@@ -892,7 +892,7 @@ avg = a.average([48000,59000,99000,13000,78000,45000,31000,17000,39000,37000,930
 print(f"Average : {avg:.5f}")
 
 #=======================================================
-# Best Time to Buy and Sell Stock
+# Best Time to Buy and Sell Stock - 1
 
 class Solution(object):
     def maxProfit(self, prices):
@@ -906,3 +906,14 @@ class Solution(object):
                 max_profit = profit
 
         return max_profit
+    
+#------------------------------------------------------------------------
+# Best Time to Buy and Sell Stock - 2
+class Solution(object):
+    def maxProfit(self, prices):
+        total_profit = 0
+        for i in range(1, len(prices)):
+            if prices[i] > prices[i - 1]:
+                total_profit += prices[i] - prices[i - 1]
+        return total_profit
+
