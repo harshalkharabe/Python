@@ -917,3 +917,39 @@ class Solution(object):
                 total_profit += prices[i] - prices[i - 1]
         return total_profit
 
+#========================================================================
+# Reverse Words in a String
+class Solution(object):
+    def reverseWords(self, s):
+        l1 = s.split()
+        l2 = l1[::-1]
+        s1 = " ".join(l2)
+        return s1
+
+a = Solution()
+print(a.reverseWords("the sky is blue"))
+
+#===============================================================================
+# Input: haystack = "sadbutsad", needle = "sad"
+# Output: 0
+# Explanation: "sad" occurs at index 0 and 6.
+# The first occurrence is at index 0, so we return 0.
+# Input: haystack = "leetcode", needle = "leeto"
+# Output: -1
+# Explanation: "leeto" did not occur in "leetcode", so we return -1.
+
+class Solution(object):
+    def strStr(self, haystack, needle):
+        lh = len(haystack)
+        ln = len(needle)
+        val = -1
+        for i in range(lh):
+            print(haystack[i:i+ln])
+            print(needle[:])
+            if haystack[i:i+ln]==needle[:]:
+                val = i
+                break
+        return val
+           
+a = Solution()
+print(a.strStr("abc","c"))
