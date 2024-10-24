@@ -370,3 +370,23 @@ else:
 #             dict1[ch].append(word)
 #     i+=1
 # print(dict1)
+
+# 41. Write a Python program to create multiple lists.      
+l1 = list()
+print(f"Empty list : {l1}")
+l2 = [12,34,56,9]
+print(f"List : {l2}")
+l3 = [i for i in range(1,11)]
+print(f"List : {l3}")
+
+# 42. Write a Python program to find missing and additional values in two lists.      
+# 	Sample data : Missing values in second list: b,a,c
+# 	Additional values in second list: g,h
+
+
+
+# 43. Write a Python program to split a list into different variables. 
+
+# 44. Write a Python program to generate groups of five consecutive numbers in a list. 
+
+# 45. Write a Python program to convert a pair of values into a sorted unique array.

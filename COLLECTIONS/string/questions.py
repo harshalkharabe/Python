@@ -62,15 +62,29 @@
 #input : 1b3c4d
 #output : bcccdddd
 
-s1 = input("Enter input : ")
+# s1 = input("Enter input : ")
+# s2 = ''
+# i=0
+# while i<len(s1):
+#     digit = s1[i]
+#     i+=1
+#     ch = s1[i]
+#     s2=s2+(ch*int(digit))
+#     # for i in range(int(digit)):
+#     #     s2 = s2+ch
+#     i+=1
+# print(s1,s2)
+
+# lstrip() WITHOUT USING LSTRIP() METHOD
+s1 = "   A B"
 s2 = ''
-i=0
-while i<len(s1):
-    digit = s1[i]
-    i+=1
-    ch = s1[i]
-    s2=s2+(ch*int(digit))
-    # for i in range(int(digit)):
-    #     s2 = s2+ch
-    i+=1
-print(s1,s2)
+c=0
+for i in s1:
+    if i!=' ':
+        break
+    c+=1
+s2=s1[c:]
+print(s1,len(s1))
+print(s2,len(s2))
+
+#========================================================

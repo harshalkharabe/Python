@@ -953,3 +953,20 @@ class Solution(object):
            
 a = Solution()
 print(a.strStr("abc","c"))
+
+#=============================CHAT GPT========================================
+class Solution(object):
+    def canJump(self,nums):
+        furthest = 0
+        for i in range(len(nums)):
+            if i > furthest:
+                return False
+            furthest = max(furthest, i + nums[i])
+            print(furthest)
+            if furthest >= len(nums) - 1:
+                return True
+        return False
+
+a = Solution()
+print(a.canJump([2,3,1,1,4]))
+print(a.canJump([3,2,1,0,4]))
