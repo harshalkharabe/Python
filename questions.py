@@ -970,3 +970,69 @@ class Solution(object):
 a = Solution()
 print(a.canJump([2,3,1,1,4]))
 print(a.canJump([3,2,1,0,4]))
+
+#==============================================================
+# Write a function to find the longest common prefix string amongst an array of strings.
+# If there is no common prefix, return an empty string "".
+# Input: strs = ["flower","flow","flight"]
+# Output: "fl"
+def fun(strs):
+    if not strs:
+            return ""
+    
+    prefix = strs[0]
+    
+    for string in strs[1:]:
+        while string[:len(prefix)] != prefix and prefix:
+            prefix = prefix[:-1]
+    
+    return prefix
+
+# 46. Write a Python program to select the odd items of a list. 
+l1 = list(range(5,51,5))
+l2 = [num for num in l1 if num%2!=0]
+print(l1,l2,sep='\n')
+
+# 47. Write a Python program to insert an element before each element of a list.
+# l1 = [12,34,56,78,89]
+# l2 = []
+# for i in range(len(l1)):
+#     l2.append(l1[i])
+#     item = int(input(f"Enter number to insert at place :"))
+#     l2.append(item)
+
+# print(l2)
+
+# 48. Write a Python program to print a nested lists (each list on a new line) using the print() function. 
+l1 = [[1,2],[3,4],[5,6],[7,8]]
+print(l1)
+for i in l1:
+    print(i)
+
+# 49. Write a Python program to convert list to list of dictionaries.
+# Sample lists: ["Black", "Red", "Maroon", "Yellow"], ["#000000", "#FF0000", "#800000", "#FFFF00"]
+# Expected Output: [{'color_name': 'Black', 'color_code': '#000000'}, {'color_name': 'Red', 'color_code': '#FF0000'}, {'color_name': 'Maroon', 'color_code': '#800000'}, {'color_name': 'Yellow', 'color_code': '#FFFF00'}]
+
+l1 = ["Black", "Red", "Maroon", "Yellow"]
+l2 = ["#000000", "#FF0000", "#800000", "#FFFF00"]
+color = []
+for i in range(len(l1)):
+    dic = {}
+    dic['color_name'] = l1[i]
+    dic['color_code'] = l2[i]
+    color.append(dic)
+print(color)
+
+# 50. Write a Python program to sort a list of nested dictionaries. 
+data = [
+    {'name': 'Alice', 'age': 30},
+    {'name': 'Bob', 'age': 25},
+    {'name': 'Charlie', 'age': 35},
+    {'name': 'David', 'age': 20}
+]
+print(f"Before sorting : {data}")
+for i in range(len(data)):
+    for j in range(i+1,len(data)):
+        if data[i]['age']>data[j]['age']:
+            data[i],data[j]=data[j],data[i]
+print("After Sorting : ",data)
