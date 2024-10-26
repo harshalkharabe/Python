@@ -1035,4 +1035,4 @@ for i in range(len(data)):
     for j in range(i+1,len(data)):
         if data[i]['age']>data[j]['age']:
             data[i],data[j]=data[j],data[i]
-print("After Sorting : ",data)
+print("After Sorting : ",data) 
