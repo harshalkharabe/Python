@@ -1035,4 +1035,28 @@ for i in range(len(data)):
     for j in range(i+1,len(data)):
         if data[i]['age']>data[j]['age']:
             data[i],data[j]=data[j],data[i]
-print("After Sorting : ",data) 
+print("After Sorting : ",data)
+
+# 51. Write a Python program to split a list every Nth element. 
+# 	Sample list: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n']
+# 	Expected Output: [['a', 'd', 'g', 'j', 'm'], ['b', 'e', 'h', 'k', 'n'], ['c', 'f', 'i', 'l']]
+l1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n']
+l2=[]
+i=0
+l=len(l1)
+while i<l:
+    r = []
+    n= int(input("Enter nth element : "))
+
+# 52. Write a Python program to compute the difference between two lists.      
+# Sample data: ["red", "orange", "green", "blue", "white"], ["black", "yellow", "green", "blue"]
+# Expected Output:
+# 	Color1-Color2: ['white', 'orange', 'red']
+# 	Color2-Color1: ['black', 'yellow']
+
+
+# 53. Write a Python program to create a list with infinite elements. 
+
+# 54. Write a Python program to concatenate elements of a list. 
+
+# 55. Write a Python program to remove key values pairs from a list of dictionaries. 
