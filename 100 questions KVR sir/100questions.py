@@ -427,3 +427,143 @@ if a==b:
 else :
     l1 = [a]+[b]
 print(l1)
+
+# 46. Write a Python program to select the odd items of a list. 
+l1 = list(range(5,51,5))
+l2 = [num for num in l1 if num%2!=0]
+print(l1,l2,sep='\n')
+
+# 47. Write a Python program to insert an element before each element of a list.
+# l1 = [12,34,56,78,89]
+# l2 = []
+# for i in range(len(l1)):
+#     l2.append(l1[i])
+#     item = int(input(f"Enter number to insert at place :"))
+#     l2.append(item)
+
+# print(l2)
+
+# 48. Write a Python program to print a nested lists (each list on a new line) using the print() function. 
+l1 = [[1,2],[3,4],[5,6],[7,8]]
+print(l1)
+for i in l1:
+    print(i)
+
+# 49. Write a Python program to convert list to list of dictionaries.
+# Sample lists: ["Black", "Red", "Maroon", "Yellow"], ["#000000", "#FF0000", "#800000", "#FFFF00"]
+# Expected Output: [{'color_name': 'Black', 'color_code': '#000000'}, {'color_name': 'Red', 'color_code': '#FF0000'}, {'color_name': 'Maroon', 'color_code': '#800000'}, {'color_name': 'Yellow', 'color_code': '#FFFF00'}]
+
+l1 = ["Black", "Red", "Maroon", "Yellow"]
+l2 = ["#000000", "#FF0000", "#800000", "#FFFF00"]
+color = []
+for i in range(len(l1)):
+    dic = {}
+    dic['color_name'] = l1[i]
+    dic['color_code'] = l2[i]
+    color.append(dic)
+print(color)
+
+# 50. Write a Python program to sort a list of nested dictionaries. 
+data = [
+    {'name': 'Alice', 'age': 30},
+    {'name': 'Bob', 'age': 25},
+    {'name': 'Charlie', 'age': 35},
+    {'name': 'David', 'age': 20}
+]
+print(f"Before sorting : {data}")
+for i in range(len(data)):
+    for j in range(i+1,len(data)):
+        if data[i]['age']>data[j]['age']:
+            data[i],data[j]=data[j],data[i]
+print("After Sorting : ",data)
+
+
+
+# 51. Write a Python program to split a list every Nth element. 
+# 	Sample list: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n']
+# 	Expected Output: [['a', 'd', 'g', 'j', 'm'], ['b', 'e', 'h', 'k', 'n'], ['c', 'f', 'i', 'l']]
+
+
+
+# 52. Write a Python program to compute the difference between two lists.      
+# Sample data: ["red", "orange", "green", "blue", "white"], ["black", "yellow", "green", "blue"]
+# Expected Output:
+# 	Color1-Color2: ['white', 'orange', 'red']
+# 	Color2-Color1: ['black', 'yellow']
+l1 = ["red", "orange", "green", "blue", "white"]
+l2 = ["black", "yellow", "green", "blue"]
+
+print("Color1-Color2")
+for i in l2:
+    if i not in l1:
+        print(i)
+
+print("Color2-Color1")
+for i in l1:
+    if i not in l2:
+        print(i)
+
+# 53. Write a Python program to create a list with infinite elements.
+# n=0
+# i=0
+# l1=[]
+# while True:
+#     n+=1
+#     l1.append(n)
+#     print(l1)
+
+# 54. Write a Python program to concatenate elements of a list.
+
+l1 = ["My","Name","is","Harshal","Kharabe"]
+s1 = ''
+for i in l1:
+    s1 = s1+i+" "
+print(s1)
+
+# 55. Write a Python program to remove key values pairs from a list of dictionaries.
+
+# 56. Write a Python program to convert a string to a list. 
+s = "Harshal"
+l1 = [ch for ch in s]
+print("String to List :",l1)
+
+# 57. Write a Python program to check if all items of a given list of strings is equal to a given string.
+def check(l1,s) :
+    for i in l1:
+        if i != s:
+            return False
+    return True
+l1 = ["Harshal","Kharabe"]
+s = "Harshal"
+print(f"Check {s} is equal to all words in list or not : ",check(l1,s))
+
+# 58. Write a Python program to replace the last element in a list with another list. 
+# 	Sample data : [1, 3, 5, 7, 9, 10], [2, 4, 6, 8]
+# 	Expected Output: [1, 3, 5, 7, 9, 2, 4, 6, 8]
+
+l1 = [1, 3, 5, 7, 9, 10]
+l2 = [2, 4, 6, 8]
+l3 = []
+for i in range(len(l1)-1):
+    l3.append(l1[i])
+for i in range(len(l2)):
+    l3.append(l2[i])
+print(l3)
+# 59. Write a Python program to check whether the n-th element exists in a given list. 
+l1 = [12,34,32,56,54,78,9,10]
+nth_ele = int(input("Enter nth element position : "))
+if nth_ele<len(l1):
+    print("Exist")
+else:
+    print("Not Exist")
+
+# 60. Write a Python program to find a tuple, the smallest second index value from a list of tuples.
+l1 = [(2,4),(2,3),(5,1),(4,3),(2,4)]
+stup = l1[0][-1]
+print(stup)
+smallest=None
+for i in range(len(l1)):
+        if stup>l1[i][-1]:
+            stup = l1[i][-1]
+            smallest=l1[i]
+print("Smallest second tuple value : ",smallest)
