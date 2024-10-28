@@ -603,3 +603,52 @@ for j in range(len(l1)):
         if l1[i]==0:
             l1[i+1],l1[i]=l1[i],l1[i+1]
 print(l1)
+
+# 66. Write a Python program to find the list in a list of lists whose sum of elements is the highest. 
+# 	Sample lists: [1,2,3], [4,5,6], [10,11,12], [7,8,9]
+# 	Expected Output: [10, 11, 12]
+l1 = [[1,2,3], [4,5,6], [10,11,12], [7,8,9]]
+s = 0
+for i in l1:
+    if sum(i)>s:
+        s=sum(i)
+        l2 = i
+print(l2)
+# 67. Write a Python program to find all the values in a list are greater than a specified number. 
+l1 = [1,2,3,4,5,6,7,89,34,4,35,54,56,56,7,6]
+num = 6
+print(f'All elements in list greater than {num} :')
+for i in l1:
+    if i>num:
+        print(i,end=' ')
+print()
+# 68. Write a Python program to extend a list without append.      
+# 	Sample data: [10, 20, 30]
+# 	[40, 50, 60]
+# 	Expected output : [40, 50, 60, 10, 20, 30]
+l1 = [10,20,30]
+l2 = [40,50,60]
+l2[len(l2):len(l2)]=l1
+print(l2)
+# 69. Write a Python program to remove duplicates from a list of lists.      
+# 		Sample list : [[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+# 		New List : [[10, 20], [30, 56, 25], [33], [40]]
+
+l1 = [[10, 20], [40], [30, 56, 25], [10, 20], [33], [40]]
+l2 = []
+for i in l1:
+    if i not in l2:
+        l2.append(i)
+print("After Removing Duplicate : ",l2)
+
+# 70. Write a Python program to find the items starts with specific character from a given list. 
+# 		Expected Output:
+# 		Original list:
+# 		['abcd', 'abc', 'bcd', 'bkie', 'cder', 'cdsw', 'sdfsd', 'dagfa', 'acjd']
+# 		Items start with a from the said list:
+# 		['abcd', 'abc', 'acjd']
+# 		Items start with d from the said list:
+# 		['dagfa']
+# 		Items start with w from the said list:
+# 		[]
+
