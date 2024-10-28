@@ -567,3 +567,39 @@ for i in range(len(l1)):
             stup = l1[i][-1]
             smallest=l1[i]
 print("Smallest second tuple value : ",smallest)
+
+# 61. Write a Python program to create a list of empty dictionaries. 
+
+l1 = [dict() for i in range(5)]
+print(l1)
+# 62. Write a Python program to print a list of space-separated elements.
+
+# 63. Write a Python program to insert a given string at the beginning of all items in a list.
+# 	Sample list : [1,2,3,4], string : emp
+# 	Expected output : ['emp1', 'emp2', 'emp3', 'emp4']
+l1 = [1,2,3,4]
+l2 = []
+s = "emp"
+for i in l1:
+    s1 = s+str(i)
+    l2.append(s1)
+print(l2)
+
+# 64. Write a Python program to iterate over two lists simultaneously.
+l1 = [12,34,56,78,89]
+l2 = [1,3,6,8,9]
+for i in range(len(l1)):
+    print(l1[i],l2[i])
+# 65. Write a Python program to move all zero digits to end of a given list of numbers. 
+# 	Expected output:
+# 	Original list:
+# 	[3, 4, 0, 0, 0, 6, 2, 0, 6, 7, 6, 0, 0, 0, 9, 10, 7, 4, 4, 5, 3, 0, 0, 2, 9, 7, 1]
+# 	Move all zero digits to end of the said list of numbers:
+# 	[3, 4, 6, 2, 6, 7, 6, 9, 10, 7, 4, 4, 5, 3, 2, 9, 7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+l1 = [3, 4, 0, 0, 0, 6, 2, 0, 6, 7, 6, 0, 0, 0, 9, 10, 7, 4, 4, 5, 3, 0, 0, 2, 9, 7, 1]
+for j in range(len(l1)):
+    for i in range(len(l1)-1):
+        if l1[i]==0:
+            l1[i+1],l1[i]=l1[i],l1[i+1]
+print(l1)
