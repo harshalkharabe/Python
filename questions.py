@@ -988,3 +988,25 @@ def fun(strs):
     
     return prefix
 
+n = int(input())
+l=[]
+for _ in range(n):
+    name = input()
+    score = float(input())
+    l1=[]
+    l1.append(name)
+    l1.append(score)
+    l.append(l1)
+smallest = float('inf')
+second_smallest = float('inf')
+name = ''
+for i,j in l:
+    print(type(i))
+    print(type(j))
+    if smallest>j:
+        second_smallest=smallest
+        smallest=j
+    elif smallest<j<second_smallest:
+        second_smallest=j
+        name = i
+print(name)

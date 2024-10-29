@@ -60,3 +60,24 @@ print(next(b))
 print(next(b))
 print(next(b))
 print(next(b))
+
+f = 12.45454
+print(round(f,2))
+
+s1 = {10,20,30,40,50}
+print(s1)
+print(s1.pop())
+print(s1.pop())
+print(s1.pop())
+print(s1.pop())
+
+s1={1,2,3}
+s2={4,5,6}
+print(s1.union(s2))
+
+s1={1,2,3,4}
+s2={1,2,3,4,5}
+s3={1,2,4,5,6,7,8}
+s4 = s1&s2-s3
+print(s4)
+
