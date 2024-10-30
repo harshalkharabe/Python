@@ -81,3 +81,27 @@ s3={1,2,4,5,6,7,8}
 s4 = s1&s2-s3
 print(s4)
 
+s2 = set({'a':1,'b':3})
+print(s2)
+
+# s1 = {val for i in range(1,11) if (val:=int(input()))%2==0}
+# print(s1)
+
+#UNION
+s1 = {1,2,4}
+s2 = {3,5,6}
+print(s1.union(s2))
+#UPDATE
+s1 = {1,2,4}
+s2 = {3,5,6}
+s1.update(s2)
+print(s1)
+#INTERSECTION
+s1 = {1,2,4}
+s2 = {3,5,6}
+print(s1.intersection(s2))
+#INTERSECTION_UPDATE
+s1 = {1,2,4}
+s2 = {3,5,6}
+s1.intersection_update(s2)
+print(s1)
