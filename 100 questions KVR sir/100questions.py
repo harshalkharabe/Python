@@ -652,3 +652,73 @@ print("After Removing Duplicate : ",l2)
 # 		Items start with w from the said list:
 # 		[]
 
+# 71. Write a Python program to check whether all dictionaries in a list are empty or not. 
+# 	Sample list : [{},{},{}]
+# 	Return value : True
+# 	Sample list : [{1,2},{},{}]
+# 	Return value : False
+
+l1 = [{1},{},{}]
+for i in l1:
+    if len(i)>0:
+        val = False
+        break
+    val = True
+print(val)
+
+# 72. Write a Python program to flatten a given nested list structure.
+# 		Original list: [0, 10, [20, 30], 40, 50, [60, 70, 80], [90, 100, 110, 120]]
+# 		Flatten list:
+# 		[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+
+l1 = [0, 10, [20, 30], 40, 50, [60, 70, 80], [90, 100, 110, 120]]
+l2 = []
+for i in l1:
+    if type(i)==int or type(i)==float:
+        l2.append(i)
+    else:
+        for j in i:
+            l2.append(j)
+print("Flattern list : ",l2)
+
+# 73. Write a Python program to remove consecutive duplicates of a given list. 
+# 		Original list:
+# 		[0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+# 		After removing consecutive duplicates:
+# 		[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 4]
+
+l1 = [0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+l1.sort()
+for i in range(len(l1)-1):
+    if l1[i]==l1[i+1]:
+        l1.remove(l1[i])
+        l1.insert(i,'_')
+print(l1)
+l2=[]
+for i in l1:
+    if type(i)!=int:
+        pass
+    else:
+        l2.append(i)
+print(l2)
+
+# 74. Write a Python program to pack consecutive duplicates of a given list elements into sublists.
+# 	Original list:
+# 	[0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+# 	After packing consecutive duplicates of the said list elements into sublists:
+# 	[[0, 0], [1], [2], [3], [4, 4], [5], [6, 6, 6], [7], [8], [9], [4, 4]]
+
+l1 = [0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
+l1.sort()
+l2 = []
+
+# 75. Write a Python program to create a list reflecting the run-length encoding from a given list of integers or a given list of characters. 
+# 	Original list:
+# 	[1, 1, 2, 3, 4, 4.3, 5, 1]
+# 	List reflecting the run-length encoding from the said list:
+# 	[[2, 1], [1, 2], [1, 3], [1, 4], [1, 4.3], [1, 5], [1, 1]]
+# 	Original String:
+# 	automatically
+# 	List reflecting the run-length encoding from the said string:
+# 	[[1, 'a'], [1, 'u'], [1, 't'], [1, 'o'], [1, 'm'], [1, 'a'], [1, 't'], [1, 'i'], [1, 'c'], [1, 'a'], [2, 'l'], [1, 'y']]
+
