@@ -41,3 +41,7 @@ print(dict1) # if the key you want to read is not exist in dictionary then it ad
 
 print(dict1.setdefault("firstname"))
 print(dict1)
+
+d1 = {"Harsh":123,"Ani":3435}
+n = d1.keys()
+print(n)
