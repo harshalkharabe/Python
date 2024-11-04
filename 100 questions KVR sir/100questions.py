@@ -709,8 +709,15 @@ print(l2)
 # 	[[0, 0], [1], [2], [3], [4, 4], [5], [6, 6, 6], [7], [8], [9], [4, 4]]
 
 l1 = [0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
-l1.sort()
-l2 = []
+l2 = list(set(l1))
+l3=[]
+for i in l2:
+    l4=[]
+    c = l1.count(i)
+    for j in range(c):
+        l4.append(i)
+    l3.append(l4)
+print(l3)
 
 # 75. Write a Python program to create a list reflecting the run-length encoding from a given list of integers or a given list of characters. 
 # 	Original list:
@@ -722,3 +729,91 @@ l2 = []
 # 	List reflecting the run-length encoding from the said string:
 # 	[[1, 'a'], [1, 'u'], [1, 't'], [1, 'o'], [1, 'm'], [1, 'a'], [1, 't'], [1, 'i'], [1, 'c'], [1, 'a'], [2, 'l'], [1, 'y']]
 
+
+
+# 76. Write a Python program to create a list reflecting the modified run-length encoding from a given list of integers or a given list of characters. 
+# 	Original list:
+# 	[1, 1, 2, 3, 4, 4, 5, 1]
+# 	List reflecting the modified run-length encoding from the said list:
+# 	[[2, 1], 2, 3, [2, 4], 5, 1]
+# 	Original String:
+# 	aabcddddadnss
+# 	List reflecting the modified run-length encoding from the said string:
+# 	[[2, 'a'], 'b', 'c', [4, 'd'], 'a', 'd', 'n', [2, 's']]
+
+# 77. Write a Python program to decode a run-length encoded given list.
+# 	Original encoded list:
+# 	[[2, 1], 2, 3, [2, 4], 5, 1]
+# 	Decode a run-length encoded said list:
+# 	[1, 1, 2, 3, 4, 4, 5, 1]
+
+# 78. Write a Python program to split a given list into two parts where the length of the first part of the list is given. 
+# 	Original list:
+# 	[1, 1, 2, 3, 4, 4, 5, 1]
+# 	Length of the first part of the list: 3
+# 	Splited the said list into two parts:
+# 	([1, 1, 2], [3, 4, 4, 5, 1])
+
+l1 = [1, 1, 2, 3, 4, 4, 5, 1]
+split_index = 3
+l2 = []
+for i in range(split_index):
+    l2.append(l1[i])
+l1 = l1[split_index:]
+print(f"List After spliting : {l2,l1}")
+
+# 79. Write a Python program to remove the K'th element from a given list, print the new list. Original list:
+# 	[1, 1, 2, 3, 4, 4, 5, 1]
+# 	After removing an element at the kth position of the said list:
+# 	[1, 1, 3, 4, 4, 5, 1]
+
+l1 = [1, 1, 2, 3, 4, 4, 5, 1]
+nth_index = 4
+l2=[]
+print(f"List before removing : {l1}")
+for i in range(len(l1)):
+    if i==nth_index:
+        pass
+    else:
+        l2.append(l1[i])
+print(f"List after removing nth index : {l2}")
+
+# 80. Write a Python program to insert an element at a specified position into a given list. 
+# 	Original list:
+# 	[1, 1, 2, 3, 4, 4, 5, 1]
+# 	After inserting an element at kth position in the said list:
+# 	[1, 1, 12, 2, 3, 4, 4, 5, 1]
+
+l1=[1, 1, 2, 3, 4, 4, 5, 1]
+ele = 45
+kth_position = 3
+l2 = l1[:kth_position]+[ele]+l1[kth_position:]
+print("After inserting element at kth index : ",l2)
+
+# 81. Write a Python program to extract a given number of randomly selected elements from a given list. 
+# 	Original list:
+# 	[1, 1, 2, 3, 4, 4, 5, 1]
+# 	Selected 3 random numbers of the above list:
+# 	[4, 4, 1]
+
+
+
+# 82. Write a Python program to generate the combinations of n distinct objects taken from the elements of a given list. 
+# HINT
+# Original list: [1, 2, 3, 4, 5, 6, 7, 8, 9] Combinations of 2 distinct objects: [1, 2] [1, 3] [1, 4] [1, 5] .... [7, 8] [7, 9] [8, 9]
+
+
+
+# 83. Write a Python program to round every number of a given list of numbers and print the total sum multiplied by the length of the list. 
+# 	Original list: [22.4, 4.0, -16.22, -9.1, 11.0, -12.22, 14.2, -5.2, 17.5]
+# 	Result:
+# 	243
+# 84. Write a Python program to round the numbers of a given list, print the minimum and maximum numbers and multiply the numbers by 5. Print the unique numbers in ascending order separated by space. 
+# 	Original list: [22.4, 4.0, 16.22, 9.1, 11.0, 12.22, 14.2, 5.2, 17.5]
+# 	Minimum value: 4
+# 	Maximum value: 22
+# 	Result:
+# 	20 25 45 55 60 70 80 90 110
+
+# 85. Write a Python program to create a multidimensional list (lists of lists) with zeros. 
+# Multidimensional list: [[0, 0], [0, 0], [0, 0]]

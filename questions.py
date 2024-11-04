@@ -988,3 +988,29 @@ def fun(strs):
     
     return prefix
 
+# Input: sentence = "leetcode exercises sound delightful"
+# Output: true
+# Explanation: The words in sentence are ["leetcode", "exercises", "sound", "delightful"].
+# - leetcode's last character is equal to exercises's first character.
+# - exercises's last character is equal to sound's first character.
+# - sound's last character is equal to delightful's first character.
+# - delightful's last character is equal to leetcode's first character.
+# The sentence is circular.
+
+class Solution(object):
+    def isCircularSentence(self, sentence):
+        l1 = sentence.split(" ")
+        if len(l1)==1:
+            if l1[0][-1]==l1[0][0]:
+                return True
+            else:
+                return False
+        for i in range(len(l1)-1):
+            if l1[i][-1]==l1[i+1][0]:
+                pass
+            else:
+                return False
+        return True
+        
+a = Solution()
+print("Ans : ",a.isCircularSentence("leetcode"))
