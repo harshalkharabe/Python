@@ -817,3 +817,41 @@ print("After inserting element at kth index : ",l2)
 
 # 85. Write a Python program to create a multidimensional list (lists of lists) with zeros. 
 # Multidimensional list: [[0, 0], [0, 0], [0, 0]]
+  
+
+# 86. Write a Python program to create a 3X3 grid with numbers.
+# 	3X3 grid with numbers:
+# 	[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
+
+# 87. Write a Python program to read a matrix from console and print the sum for each column. Accept matrix rows, columns and elements for each column separated with a space(for every row) as input from the user. 
+# 	Input rows: 2
+# 	Input columns: 2
+# 	Input number of elements in a row (1, 2, 3):
+# 	1 2
+# 	3 4
+# 	sum for each column:
+# 	4 6
+
+# 88. Write a Python program to read a square matrix from console and print the sum of matrix primary diagonal. Accept the size of the square matrix and elements for each column separated with a space (for every row) as input from the user. 
+# 	Input the size of the matrix: 3
+# 	2 3 4
+# 	4 5 6
+# 	3 4 7
+# 	Sum of matrix primary diagonal:
+# 	14
+
+# 89. Write a Python program to Zip two given lists of lists. 
+# 	Original lists:
+# 	[[1, 3], [5, 7], [9, 11]]
+# 	[[2, 4], [6, 8], [10, 12, 14]]
+# 	Zipped list:
+# 	[[1, 3, 2, 4], [5, 7, 6, 8], [9, 11, 10, 12, 14]]
+# 90. Write a Python program to count number of lists in a given list of lists. 
+# 		Original list:
+# 		[[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# 		Number of lists in said list of lists:
+# 		4
+# 		Original list:
+# 		[[2, 4], [[6, 8], [4, 5, 8]], [10, 12, 14]]
+# 		Number of lists in said list of lists:
+# 		3
