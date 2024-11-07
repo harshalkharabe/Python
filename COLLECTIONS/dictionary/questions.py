@@ -52,3 +52,70 @@ for i in range(len(l1)):
         if l1[i]>l1[j]:
             l1[i],l1[j]=l1[j],l1[i]
 print(l1)
+
+
+# Write a program to create dictionary to
+# store n players details
+# without comprehension
+# n = int(input("How many players : "))
+# players = {}
+# for i in range(n):
+#     name = input()
+#     score = int(input())
+#     players[name]=score
+# print(players)
+
+# #using comprehension
+# d1 = {input("Name : "):int(input("Score : ")) for i in range(n)}
+# print(d1)
+
+d1 = {n:n*n for n in range(1,11)}
+print("Square Dictionary :",d1)
+
+d2 = {n:n**3 for n in range(1,11)}
+print("Cude Dictionary :",d2)
+
+d3 = {n:[n*i for i in range(1,11)] for n in range(1,6)}
+print("Table Dictionary :",d3)
+
+# Sort Python Dictionary by Key or Value – Python
+dict1={3:30,5:50,2:20,4:40,1:10}
+l1 = dict1.keys()
+print(l1)
+l1 = sorted(l1)
+d1 = {key:dict1[key] for key in l1}
+print("Sorted dict : ",d1)
+
+# Python dictionary with keys having multiple inputs
+d1 = {}
+d1[(1,2,3)]=[10,20,30]
+print(d1)
+
+# Python program to find the sum of all items in a dictionary
+# Input : {‘a’: 100, ‘b’:200, ‘c’:300}
+# Output : 600
+
+d1 = {'a': 100, 'b':200, 'c':300}
+sum = 0
+for i in d1:
+    sum += d1[i]
+print("Total : ",sum)
+
+# ======================using values()====================
+d1 = {'a': 100, 'b':200, 'c':300}
+sum = 0
+l1 = d1.values()
+for i in l1:
+    sum+=i
+print("Total :",sum)
+
+# Python – Group Similar items to Dictionary Values List
+'''
+Input : test_list = [4, 6, 6, 4, 2, 2, 4, 8, 5, 8]
+Output : {4: [4, 4, 4], 6: [6, 6], 2: [2, 2], 8: [8, 8], 5: [5]}
+Explanation : Similar items grouped together on occurrences.
+'''
+test_list = [4, 6, 6, 4, 2, 2, 4, 8, 5, 8]
+s1 = set(test_list)
+d1 = {n:[i for i in test_list if i==n] for n in s1}
+print("Result : ",d1)
