@@ -815,9 +815,19 @@ print("After inserting element at kth index : ",l2)
 # 	Result:
 # 	20 25 45 55 60 70 80 90 110
 
+l1 = [22.4, 4.0, 16.22, 9.1, 11.0, 12.22, 14.2, 5.2, 17.5]
+l2 = [int(i) for i in l1]
+l2.sort()
+print(f"Minimum element : {min(l2)}")
+print(f"Maximun element : {max(l2)}")
+print("Result : ",end='')
+for i in l2:
+    print(i*5,end=' ')
+print()
+
 # 85. Write a Python program to create a multidimensional list (lists of lists) with zeros. 
 # Multidimensional list: [[0, 0], [0, 0], [0, 0]]
-  
+
 
 # 86. Write a Python program to create a 3X3 grid with numbers.
 # 	3X3 grid with numbers:
@@ -832,6 +842,17 @@ print("After inserting element at kth index : ",l2)
 # 	sum for each column:
 # 	4 6
 
+# r = 3
+# c = 2
+# l1 = [[int(input("Enter val :")) for j in range(c)] for i in range(r)]
+# print(l1)
+# s1,s2=0,0
+# for c1,c2 in l1:
+#     print(c1,c2)
+#     s1+=c1
+#     s2+=c2
+# print("Sum : ",s1,s2)
+
 # 88. Write a Python program to read a square matrix from console and print the sum of matrix primary diagonal. Accept the size of the square matrix and elements for each column separated with a space (for every row) as input from the user. 
 # 	Input the size of the matrix: 3
 # 	2 3 4
@@ -839,6 +860,16 @@ print("After inserting element at kth index : ",l2)
 # 	3 4 7
 # 	Sum of matrix primary diagonal:
 # 	14
+# r = 3
+# c = 3
+# s = 0
+# l1 = [[int(input("Enter num : ")) for j in range(c)] for i in range(r)]
+# print(l1)
+# for i in range(len(l1)):
+#     for j in range(len(l1)):
+#         if i==j:
+#             s = s + l1[i][j]
+# print(f'Sum of diagonal elements : {s}')
 
 # 89. Write a Python program to Zip two given lists of lists. 
 # 	Original lists:
@@ -846,6 +877,14 @@ print("After inserting element at kth index : ",l2)
 # 	[[2, 4], [6, 8], [10, 12, 14]]
 # 	Zipped list:
 # 	[[1, 3, 2, 4], [5, 7, 6, 8], [9, 11, 10, 12, 14]]
+
+l1 = [[1, 3], [5, 7], [9, 11]]
+l2 = [[2, 4], [6, 8], [10, 12, 14]]
+l3 = []
+for i in range(len(l1)):
+    l3.append(l1[i]+l2[i])
+print("Zip list :",l3)
+
 # 90. Write a Python program to count number of lists in a given list of lists. 
 # 		Original list:
 # 		[[1, 3], [5, 7], [9, 11], [13, 15, 17]]
@@ -855,3 +894,10 @@ print("After inserting element at kth index : ",l2)
 # 		[[2, 4], [[6, 8], [4, 5, 8]], [10, 12, 14]]
 # 		Number of lists in said list of lists:
 # 		3
+# l2 = [[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+l1 = [[2, 4], [[6, 8], [4, 5, 8]], [10, 12, 14]]
+c = 0
+for i in l2:
+    if type(i)==list:
+        c+=1
+print("Total no.of.list :",c)
