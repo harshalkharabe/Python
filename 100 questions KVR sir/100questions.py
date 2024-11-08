@@ -828,11 +828,16 @@ print()
 # 85. Write a Python program to create a multidimensional list (lists of lists) with zeros. 
 # Multidimensional list: [[0, 0], [0, 0], [0, 0]]
 
+l1 = [[0 for i in range(2)] for i in range(3)]
+print("multi dimensional list of zeros :",l1)
 
 # 86. Write a Python program to create a 3X3 grid with numbers.
 # 	3X3 grid with numbers:
 # 	[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
-
+# r = 3
+# c = 3
+# l1 = [[int(input("Enter val :")) for j in range(c)] for i in range(r)]
+# print(l1)
 # 87. Write a Python program to read a matrix from console and print the sum for each column. Accept matrix rows, columns and elements for each column separated with a space(for every row) as input from the user. 
 # 	Input rows: 2
 # 	Input columns: 2
