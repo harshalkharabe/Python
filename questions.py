@@ -1014,3 +1014,13 @@ class Solution(object):
         
 a = Solution()
 print("Ans : ",a.isCircularSentence("leetcode"))
+maxsum = float('-inf')
+l1 = [-2,-1]
+for i in range(len(l1)):
+    currentsum = 0
+    for j in range(i,len(l1)):
+        currentsum += l1[j]
+        maxsum = max(currentsum,maxsum)
+        if currentsum<0:
+            currentsum=0
+print("Maxsum :",maxsum)
