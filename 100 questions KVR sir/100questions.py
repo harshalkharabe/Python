@@ -808,6 +808,11 @@ print("After inserting element at kth index : ",l2)
 # 	Original list: [22.4, 4.0, -16.22, -9.1, 11.0, -12.22, 14.2, -5.2, 17.5]
 # 	Result:
 # 	243
+l1 = [22.4, 4.0, -16.22, -9.1, 11.0, -12.22, 14.2, -5.2, 17.5]
+l2 = [round(num) for num in l1]
+print(l2)
+result = sum(l2)*len(l2)
+print("Sum after multiplying length of list :",result)
 # 84. Write a Python program to round the numbers of a given list, print the minimum and maximum numbers and multiply the numbers by 5. Print the unique numbers in ascending order separated by space. 
 # 	Original list: [22.4, 4.0, 16.22, 9.1, 11.0, 12.22, 14.2, 5.2, 17.5]
 # 	Minimum value: 4
@@ -816,7 +821,7 @@ print("After inserting element at kth index : ",l2)
 # 	20 25 45 55 60 70 80 90 110
 
 l1 = [22.4, 4.0, 16.22, 9.1, 11.0, 12.22, 14.2, 5.2, 17.5]
-l2 = [int(i) for i in l1]
+l2 = [round(i) for i in l1]
 l2.sort()
 print(f"Minimum element : {min(l2)}")
 print(f"Maximun element : {max(l2)}")
@@ -906,3 +911,109 @@ for i in l2:
     if type(i)==list:
         c+=1
 print("Total no.of.list :",c)
+
+# 91. Write a Python program to find the list with maximum and minimum length. 
+# 	Original list:
+# 	[[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# 	List with maximum length of lists:
+# 	(3, [13, 15, 17])
+# 	List with minimum length of lists:
+# 	(1, [0])
+# 	Original list:
+# 	[[0], [1, 3], [5, 7], [9, 11], [3, 5, 7]]
+# 	List with maximum length of lists:
+# 	(3, [3, 5, 7])
+# 	List with minimum length of lists:
+# 	(1, [0])
+# 	Original list:
+# 	[[12], [1, 3], [1, 34, 5, 7], [9, 11], [3, 5, 7]]
+# 	List with maximum length of lists:
+# 	(4, [1, 34, 5, 7])
+# 	List with minimum length of lists:
+# 	(1, [12])
+
+l1 = [[0],[1, 3], [5, 7], [9, 11], [3, 5, 7]]
+m = 0
+min = len(l1[0])
+tup1=None
+tup2=(len(l1[0]),l1[0])
+for i in l1:
+    if len(i)>m:
+        m = len(i)
+        tup1 = (len(i),i)
+    elif len(i)<min:
+        min = len(i)
+        tup2 = (len(i),i)
+print("List with maximum length of lists:",tup1)
+print("List with minimum length of lists:",tup2)
+
+# 92. Write a Python program to check if a nested list is a subset of another nested list. 
+# 		Original list:
+# 		[[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# 		[[1, 3], [13, 15, 17]]
+# 		If the one of the said list is a subset of another.:
+# 		True
+# 		Original list:
+# 		[[[1, 2], [2, 3]], [[3, 4], [5, 6]]]
+# 		[[[3, 4], [5, 6]]]
+# 		If the one of the said list is a subset of another.:
+# 		True
+# 		Original list:
+# 		[[[1, 2], [2, 3]], [[3, 4], [5, 7]]]
+# 		[[[3, 4], [5, 6]]]
+# 		If the one of the said list is a subset of another.:
+# 		False
+
+# 93. Write a Python program to count the number of sublists contain a particular element. 
+# 		Original list:
+# 		[[1, 3], [5, 7], [1, 11], [1, 15, 7]]
+# 		Count 1 in the said list:
+# 		3
+# 		Count 7 in the said list:
+# 		2
+# 		Original list:
+# 		[['A', 'B'], ['A', 'C'], ['A', 'D', 'E'], ['B', 'C', 'D']]
+# 		Count 'A' in the said list:
+# 		3
+# 		Count 'E' in the said list:
+# 		1
+l1 = [['A', 'B'], ['A', 'C'], ['A', 'D', 'E'], ['B', 'C', 'D']]
+l2 = [[1, 3], [5, 7], [1, 11], [1, 15, 7]]
+c = 0
+for i in l2:
+    c += i.count(7)
+print("Count in the list is : ",c)
+
+# 94. Write a Python program to count number of unique sublists within a given list. 
+# 	Original list:
+# 	[[1, 3], [5, 7], [1, 3], [13, 15, 17], [5, 7], [9, 11]]
+# 	Number of unique lists of the said list:
+# 	{(1, 3): 2, (5, 7): 2, (13, 15, 17): 1, (9, 11): 1}
+# 	Original list:
+# 	[['green', 'orange'], ['black'], ['green', 'orange'], ['white']]
+# 	Number of unique lists of the said list:
+# 	{('green', 'orange'): 2, ('black',): 1, ('white',): 1}
+l1 = [['green', 'orange'], ['black'], ['green', 'orange'], ['white']]
+l1 = [[1, 3], [5, 7], [1, 3], [13, 15, 17], [5, 7], [9, 11]]
+dict1 = {}
+for i in l1:
+    c = 0
+    for j in l1:
+        if i==j:
+            c+=1
+    dict1[tuple(i)]=c
+print(dict1)
+
+# 95. Write a Python program to sort each sublist of strings in a given list of lists. 
+# 	Original list:
+# 	[[2], [0], [1, 3], [0, 7], [9, 11], [13, 15, 17]]
+# 	Sort the list of lists by length and value:
+# 	[[0], [2], [0, 7], [1, 3], [9, 11], [13, 15, 17]]
+
+l1 = [[2], [0], [1, 3], [0, 7], [9, 11], [13, 15, 17]]
+l1.sort()
+for i in range(len(l1)):
+    for j in range(len(l1)-1):
+        if len(l1[j])>len(l1[j+1]):
+            l1[j],l1[j+1]=l1[j+1],l1[j]
+print(l1)
