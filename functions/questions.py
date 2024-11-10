@@ -60,3 +60,15 @@ fun1()
 def fun2():
     print(a)
 fun2()
+
+#How to invoke or call inner function outside outer function?
+# In order invoke inner function outside outer function, outer function must
+# return reference of inner function
+
+def fun1():
+    print("Outer function")
+    def fun2():
+        print("Inner function")
+    return fun2
+res = fun1()
+res()

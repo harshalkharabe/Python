@@ -1024,3 +1024,72 @@ for i in range(len(l1)):
         if currentsum<0:
             currentsum=0
 print("Maxsum :",maxsum)
+
+# You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+# Find two lines that together with the x-axis form a container, such that the container contains the most water.
+# Return the maximum amount of water a container can store.
+# Notice that you may not slant the container.
+# Input: height = [1,8,6,2,5,4,8,3,7]
+# Output: 49
+# Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+# Example 2:
+# Input: height = [1,1]
+# Output: 1
+
+# max_water = 0
+# for i in range(len(height)):
+#     for j in range(i+1,len(height)):
+#         b = j-i
+#         h = min(height[i],height[j])
+#         total_water = h*b
+#         max_water = max(max_water,total_water)
+#         # if total_water>max_water:
+#         #     max_water=total_water
+# print(max_water)
+
+height = [1,8,6,2,5,4,8,3,7]
+mwater=0
+lb=0
+rb=len(height)-1
+while lb<rb:
+    b = rb-lb
+    h = min(height[lb],height[rb])
+    twater = h*b
+    mwater = max(twater,mwater)
+    if height[lb]<height[rb]:
+        lb+=1
+    else:
+        rb-=1
+print(mwater)
+
+# Example 1:
+# Input: nums = [1,2,3,4]
+# Output: [24,12,8,6]
+# Example 2:
+# Input: nums = [-1,1,0,-3,3]
+# Output: [0,0,9,0,0]
+nums = [-1,1,0,-3,3]
+# l1=[]
+# for i in range(len(nums)):
+#     m=1
+#     for j in range(len(nums)):
+#         if i==j:
+#             pass
+#         else:
+#             m*=nums[j]
+#     l1.append(m)
+# print(l1)
+nums = [1,2,3,4]
+pre = [1]*len(nums)
+suf = [1]*len(nums)
+rev = [1]*len(nums)
+
+for i in range(1,len(nums)):
+    n = 0
+    n = pre[i-1]*nums[i-1]
+    pre.append(n)
+for i in range(1,len(nums)):
+    n = 0
+    n = pre[i-1]*nums[i-1]
+    suf.append(n)
+print(suf)
