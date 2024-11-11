@@ -1079,17 +1079,3 @@ nums = [-1,1,0,-3,3]
 #             m*=nums[j]
 #     l1.append(m)
 # print(l1)
-nums = [1,2,3,4]
-pre = [1]*len(nums)
-suf = [1]*len(nums)
-rev = [1]*len(nums)
-
-for i in range(1,len(nums)):
-    n = 0
-    n = pre[i-1]*nums[i-1]
-    pre.append(n)
-for i in range(1,len(nums)):
-    n = 0
-    n = pre[i-1]*nums[i-1]
-    suf.append(n)
-print(suf)
