@@ -1079,3 +1079,21 @@ nums = [-1,1,0,-3,3]
 #             m*=nums[j]
 #     l1.append(m)
 # print(l1)
+
+
+class Solution(object):
+    def compressedString(self, word):
+        s = ""
+        i=0
+        while i<len(word):
+            ch = word[i]
+            c = 0
+            while i<len(word) and word[i]==ch and c<9:
+                c+=1
+                i+=1
+            s += str(c)+ch
+        return s
+
+
+a = Solution()
+print(a.compressedString("aaaaaaaaaaaaaabb"))

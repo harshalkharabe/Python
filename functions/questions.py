@@ -108,6 +108,78 @@ fun(12,"Harshal")
 fun(13,"Aniket","BCA")
 fun(14,"Kunal","MCA")
 
+#how power function works
+def power(num,pow):
+    result = num**pow
+    print("Power :",result)
+power(3,3)
+
+# How to define function with position only required arguments?
+# A function is defined with special parameter whose name is /
+# In order define function with position only argument, last parameter in
+# function must be /
+def fun(a,b,/):
+    print("it takes only required arguments :",a,b)
+fun(12,34)
+# fun(12,b=34) it gives error
+
+# How to define function with keyword only required arguments?
+# A function is defined with special parameter whose name is *
+# In function definition if * first parameter, the remaining parameters are
+# keyword only required arguments
+def fun(*,name,roll):
+    print(name,roll,"it takes only keyword arguments")
+fun(name="Harshal",roll=11)
+# fun("paa",12) it gives error
+
+
+# return keyword
+# This keyword is used by function to return value to calling function or caller.
+# return is called branching statement or passes control statement.
+# After returning value to calling function, it terminates execution of function.
+def fun(a,b):
+    return a+b
+result = fun(12,5)
+print("Addition of a,b is",result)
+
+def maximun(a,b):
+    return a if a>b else b
+result = maximun(12,5)
+print(f"Maximun : {result}")
+result = maximun(5,13)
+print(f"Maximun : {result}")
+
+def isprime(num):
+    for i in range(2,num):
+        if num%i==0:
+            return False
+    return True
+
+num = int(input("Enter num : "))
+print(f"{num} is prime : {isprime(num)}")
+
+def ispalandrom(str):
+    if str==str[::-1]:
+        return True
+    return False
+str1 = input("Enter string :")
+print(f"{str1} is palandrom {ispalandrom(str1)}")
+
+def sort(lst,reverse=False):
+    if reverse==False:
+        for i in range(len(lst)):
+            for j in range(len(lst)-1):
+                if lst[j]>lst[j+1]:
+                    lst[j],lst[j+1]=lst[j+1],lst[j]
+                    
+    elif reverse==True:
+        for i in range(len(lst)):
+            for j in range(len(lst)-1):
+                if lst[j]<lst[j+1]:
+                    lst[j],lst[j+1]=lst[j+1],lst[j]
+    return lst
+l1=[5,7,3,2,8,1,9,4]
+print("Sorted list :",sort(l1))
 
 #How to invoke or call inner function outside outer function?
 # In order invoke inner function outside outer function, outer function must
@@ -120,4 +192,5 @@ fun(14,"Kunal","MCA")
 #     return fun2
 # res = fun1()
 # res()
+
 
