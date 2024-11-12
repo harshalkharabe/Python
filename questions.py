@@ -1097,3 +1097,21 @@ class Solution(object):
 
 a = Solution()
 print(a.compressedString("aaaaaaaaaaaaaabb"))
+
+
+# Output: true
+# Explanation: "amanaplanacanalpanama" is a palindrome.
+
+s = "A man, a plan, a canal: Panama"
+s='0P'
+s1 = ''
+for i in range(len(s)):
+    if (s[i]>="A" and s[i]<='Z') or (s[i]>='a' and s[i]<='z'):
+        s1 += s[i].lower()
+    elif (s[i]>='0' and s[i]<='9'):
+        s1+=s[i]
+print(s1==s1[::-1])
+
+s = "axc"
+t = "ahbgdc"
+# Output: false

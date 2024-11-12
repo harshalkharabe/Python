@@ -155,15 +155,15 @@ def isprime(num):
             return False
     return True
 
-num = int(input("Enter num : "))
-print(f"{num} is prime : {isprime(num)}")
+# num = int(input("Enter num : "))
+# print(f"{num} is prime : {isprime(num)}")
 
 def ispalandrom(str):
     if str==str[::-1]:
         return True
     return False
-str1 = input("Enter string :")
-print(f"{str1} is palandrom {ispalandrom(str1)}")
+# str1 = input("Enter string :")
+# print(f"{str1} is palandrom {ispalandrom(str1)}")
 
 def sort(lst,reverse=False):
     if reverse==False:
@@ -193,4 +193,63 @@ print("Sorted list :",sort(l1))
 # res = fun1()
 # res()
 
+def box(function):
+    def new_display():
+        print("*************************")
+        function()
+        print('*************************')
+    return new_display
+@box
+def display():
+    print('Hello Python')
 
+display()
+
+def upper(function):
+    def list_str(a):
+        print("*"*10)
+        function(a)
+        print("*"*10)
+    return list_str
+@upper
+def print_list_str(a):
+    for s in a:
+        print(s.upper())
+
+l1 = ["Harshal","Pratham","Kunal","Sagar","Ani"]
+print_list_str(l1)
+
+
+matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# Output: [1,2,3,6,9,8,7,4,5]
+srow = 0
+erow = len(matrix)-1
+scol = 0
+ecol = len(matrix[0])-1
+op = []
+while srow<=erow and scol<=ecol:
+    #top row
+    for i in range(scol,ecol+1):
+        op.append(matrix[srow][i])
+
+    #right col
+    for i in range(srow+1,erow+1):
+        op.append(matrix[i][ecol])
+
+    #down row
+    for i in range(ecol-1,scol-1,-1):
+        if srow==erow:
+            break
+        op.append(matrix[erow][i])
+
+    #left col
+    for i in range(erow-1,srow,-1):
+        if scol==ecol:
+            break
+        op.append(matrix[i][scol])
+
+    srow+=1
+    erow-=1
+    ecol-=1
+    scol+=1
+print(op)
