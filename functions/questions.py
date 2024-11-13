@@ -305,3 +305,56 @@ print(n)
 n = list(filter(lambda num:num%2==1,l1)) # using lambda
 print(n)
 
+#Decorator
+def decorator(fun):
+    def new_division(n1,n2):
+        if n2==0:
+            return 0
+        else:
+            return fun(n1,n2)
+    return new_division
+
+@decorator
+def div(n1,n2):#new_division
+    return n1/n2
+
+n1 = int(input("Val :"))
+n2 = int(input("Val :"))
+print("Division : ",div(n1,n2))
+
+
+#Generators 
+def gen(l1):
+    for i in l1:
+        yield i
+
+l1=[1,2,3,4,5]
+a = gen(l1)
+# print(next(a))
+# print(next(a))
+# print(next(a))
+# print(next(a))
+# print(next(a))
+# for i in a:
+#     print(i)
+
+
+a = (i for i in range(1,11)) # we don't use yield here
+a = tuple(a)
+for i in a:
+    print(i)
+# for i in a:
+#     print(i)
+
+
+def fun(s):
+    for i in s:
+        yield i
+
+s = "Prathamesh"
+v = fun(s) #Prathamesh
+print(next(v))
+
+
+# l1 = [num%2==0 for num in range(1,11)]
+# print(l1)

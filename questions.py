@@ -1150,3 +1150,19 @@ while srow<=erow and scol<=ecol:
     ecol-=1
     scol+=1
 print(op)
+
+
+words = ["Hello","Alaska","Dad","Peace"]
+res = []
+for i in words:
+    print(i)
+    l1 = [ch for ch in i if ch.lower() in "qwertyuiop"]
+    s1 = ''.join(l1)
+    l2 = [ch for ch in i if ch.lower() in "asdfghjkl"]
+    s2 = ''.join(l2)
+    l3 = [ch for ch in i if ch.lower() in "zxcvbnm"]
+    s3 = ''.join(l3)
+    print(s1,s2,s3)
+    if i==s1 or i==s2 or i==s3:
+        res.append(i)
+print(res)
