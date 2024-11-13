@@ -219,37 +219,89 @@ def print_list_str(a):
 l1 = ["Harshal","Pratham","Kunal","Sagar","Ani"]
 print_list_str(l1)
 
+def fun(x):
+    print(x) # these is parameter value pass at the time of calling function
+    x = 10
+    print(x) # these is new local varibale of fun
+a = 12
+fun(a)
 
-matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-# Output: [1,2,3,6,9,8,7,4,5]
-srow = 0
-erow = len(matrix)-1
-scol = 0
-ecol = len(matrix[0])-1
-op = []
-while srow<=erow and scol<=ecol:
-    #top row
-    for i in range(scol,ecol+1):
-        op.append(matrix[srow][i])
 
-    #right col
-    for i in range(srow+1,erow+1):
-        op.append(matrix[i][ecol])
+def box(fun):
+    def new_student_info(dic):
+        print("*"*10)
+        fun(dic)
+        print("*"*10)
+    return new_student_info
 
-    #down row
-    for i in range(ecol-1,scol-1,-1):
-        if srow==erow:
-            break
-        op.append(matrix[erow][i])
+@box
+def stud_info(dict1):
+    for i,j in dict1.items():
+        print(f"{i} --> {j}")
 
-    #left col
-    for i in range(erow-1,srow,-1):
-        if scol==ecol:
-            break
-        op.append(matrix[i][scol])
+dic = {"name":"Harshal","age":21}
+stud_info(dic)
 
-    srow+=1
-    erow-=1
-    ecol-=1
-    scol+=1
-print(op)
+
+def closers(val):
+    def power(p):
+        return val**p
+    return power
+
+power1 = closers(5)
+print(power1(3))
+print(power1(4))
+print(power1(5))
+power2 = closers(7)
+print(power2(3))
+print(power2(4))
+print(power2(5))
+power3 = closers(6)
+print(power3(3))
+print(power3(4))
+print(power3(5))
+
+
+def fun(num):
+    if num:
+        return True
+    return False
+
+l1 = [1,2,3,3]
+l2 = list(filter(fun,l1))
+print(l2)
+
+def stars(fun):
+    def new_fun():
+        print("*"*20)
+        fun() # info()
+        print("*"*20)
+    return new_fun
+
+def info():
+    print("Hello, Python")
+
+n = stars(info)
+n() # new_fun()
+
+
+t1 = (num for num in range(1,11))
+t1 = tuple(t1)
+for i in t1:
+    print(i)  # it is like tuple comprehension
+
+
+#FILTER FUNCTION
+def even(num):
+    if num%2==0:
+        return True
+    else:
+        return False
+    
+l1 = [1,2,3,4,5,6,7,8,9,10]
+n = list(filter(even,l1))
+print(n)
+
+n = list(filter(lambda num:num%2==1,l1)) # using lambda
+print(n)
+

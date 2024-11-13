@@ -1115,3 +1115,38 @@ print(s1==s1[::-1])
 s = "axc"
 t = "ahbgdc"
 # Output: false
+
+
+matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# Output: [1,2,3,6,9,8,7,4,5]
+srow = 0
+erow = len(matrix)-1
+scol = 0
+ecol = len(matrix[0])-1
+op = []
+while srow<=erow and scol<=ecol:
+    #top row
+    for i in range(scol,ecol+1):
+        op.append(matrix[srow][i])
+
+    #right col
+    for i in range(srow+1,erow+1):
+        op.append(matrix[i][ecol])
+
+    #down row
+    for i in range(ecol-1,scol-1,-1):
+        if srow==erow:
+            break
+        op.append(matrix[erow][i])
+
+    #left col
+    for i in range(erow-1,srow,-1):
+        if scol==ecol:
+            break
+        op.append(matrix[i][scol])
+
+    srow+=1
+    erow-=1
+    ecol-=1
+    scol+=1
+print(op)

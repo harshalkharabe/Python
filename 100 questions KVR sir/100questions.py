@@ -1143,3 +1143,4 @@ print("list :",l1)
 #         if l1[i]==l2[i]==l3[i]:
 #             l4.append(l1[i])
 # print(l4)
+
