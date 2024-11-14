@@ -1166,3 +1166,53 @@ for i in words:
     if i==s1 or i==s2 or i==s3:
         res.append(i)
 print(res)
+
+# list1 = ["Shogun","Tapioca Express","Burger King","KFC"]
+# list2 = ["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"]
+# list1 = ["happy","sad","good"]
+# list2 = ["sad","happy","good"]
+# l3 = []
+# least_index = len(list1)
+# for i in range(len(list1)):
+#     for j in range(len(list2)):
+#         if list1[i]==list2[j]:
+#             idx = sum(i,j)
+#             least_index = min(least_index,idx)
+
+l1 = ["cd","ac","dc","ca","zz"]
+for i in range(len(l1)):
+    if l1[i][::-1] in l1[i:] and l1[i][::-1]!=l1[i]:
+        print(l1[i])
+
+print('ab' in 'baa')
+
+
+def minimizedMaximum( n, quantities):
+        total = sum(quantities)
+        op = total/n
+        return round(op)
+
+n = 6
+quantities = [11,6]
+# n = 7
+# quantities = [15,10,10]
+print(minimizedMaximum(n,quantities))
+
+
+
+c=0
+strs=["zyx","wvu","tsr"]
+for i in strs:
+    if i == "".join(sorted(i)):
+        print("h")
+        c+=1
+        # return c
+print(c)
+
+print([1,3]+[2])
+
+l1 = [1,2,3]
+print(1 in l1)
+
+a = int("-3")
+print(a)

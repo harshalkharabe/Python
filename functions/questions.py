@@ -358,3 +358,4 @@ print(next(v))
 
 # l1 = [num%2==0 for num in range(1,11)]
 # print(l1)
+
