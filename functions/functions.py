@@ -359,3 +359,23 @@ print(next(v))
 # l1 = [num%2==0 for num in range(1,11)]
 # print(l1)
 
+#function overloading is not aalowed in python 
+def fun1():
+    print('Inside function 1')
+
+def fun1(x):
+    print("Inside fun 2")
+
+fun1(3)
+
+#lambda function
+#filter functio
+# is a higher order function which takes function as a input known as higher order function
+
+a = list(filter(lambda x:x%2==0,[12,1,34,56,78]))
+print(a)
+
+
+list1=[1,2,3,4,5,6,7,0,0,0,0]
+b = list(filter(None,list1)) # it return true values
+print(b)

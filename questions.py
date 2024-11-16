@@ -1216,3 +1216,11 @@ print(1 in l1)
 
 a = int("-3")
 print(a)
+
+
+# s={'a','b'}
+# s1 = "".join(s)
+# print(s,s1)
+# print("cb"=="bc")
+s="saak"
+# print(s.count("a"))
