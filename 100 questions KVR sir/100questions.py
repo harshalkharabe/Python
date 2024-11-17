@@ -165,7 +165,7 @@ for i in l1:
 
 # # 18. Write a Python program to generate all permutations of a list in Python.
 
-
+l1=[1,2,3]
 
 # # 19. Write a Python program to get the difference between the two lists. 
 

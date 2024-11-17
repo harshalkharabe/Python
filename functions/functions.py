@@ -379,3 +379,4 @@ print(a)
 list1=[1,2,3,4,5,6,7,0,0,0,0]
 b = list(filter(None,list1)) # it return true values
 print(b)
+

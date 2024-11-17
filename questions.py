@@ -1224,3 +1224,81 @@ print(a)
 # print("cb"=="bc")
 s="saak"
 # print(s.count("a"))
+
+
+l1 = [-1,0,1,2,-1,-4]
+l2=[]
+for i in range(len(l1)):
+    for j in range(i+1,len(l1)):
+        for k in range(j+1,len(l1)):
+            if l1[i]+l1[j]+l1[k]==0:
+                nums = [l1[i],l1[j],l1[k]]
+                nums.sort()
+                if nums not in l2:
+                    l2.append(nums)
+print(l2)
+
+# for i in range(len(l1)):
+#     a = -l1[i]
+#     for j in range(i+1,len(l1)):
+#         c = a - l1[j]
+        
+# print(l2)
+l1 = [-1,0,1,2,-1,-4]
+l2=[]
+l1.sort()
+for i in range(len(l1)):
+    j = i+1
+    k = len(l1)-1
+    if i>0 and l1[i]==l1[i-1]:continue
+    while j<k:
+        sum = l1[i]+l1[j]+l1[k]
+        if sum<0:
+            j=j+1
+        elif sum>0:
+            k-=1
+        else:
+            l2.append([l1[i],l1[j],l1[k]])
+            j+=1
+            k-=1
+
+            while j<k and l1[j]==l1[j-1]:j+=1
+        
+print(l2)
+
+
+#next permutation
+l1 = [1,3,2]
+n = len(l1)-1
+piv = -1
+for i in range(n-1,-1,-1):
+    if l1[i]<l1[i+1]:
+        piv = i
+        break
+if piv==-1:
+    l1.reverse()
+
+for i in range(n,piv-1,-1):
+    print(l1[i],l1[piv])
+    if l1[i]>l1[piv]:
+        l1[i],l1[piv]=l1[piv],l1[i]
+        break
+
+print(l1)
+
+print()
+print()
+
+def rotate(matrix):
+        l1=[]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[i])):
+                print(matrix[i][j])
+        return l1
+      
+matrix=[[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+l2=[[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+print(matrix)
+for i in l2:
+    i.reverse()
+print(l2)
