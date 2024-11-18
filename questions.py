@@ -1302,3 +1302,24 @@ print(matrix)
 for i in l2:
     i.reverse()
 print(l2)
+
+
+#find subarrays
+def find_subarrays(arr):
+    subarrays = []
+    n = len(arr)
+    for start in range(n):
+        for end in range(start, n):
+            subarrays.append(arr[start:end+1])
+    
+    # return subarrays
+    for i in subarrays:
+        if sum(i)==k:
+            return len(i)
+    else:
+        return -1
+
+arr = [48,99,37,4,-31]
+subarrays = find_subarrays(arr)
+subarrays.sort()
+print(subarrays)

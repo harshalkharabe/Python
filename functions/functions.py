@@ -380,3 +380,65 @@ list1=[1,2,3,4,5,6,7,0,0,0,0]
 b = list(filter(None,list1)) # it return true values
 print(b)
 
+#map function
+# map(function, iterable, *iterables)
+
+names = ["Harshal","Aniket","Prathamesh","Kunal","Sagar","Ram"]
+l1 = list(map(str.upper,names))
+print(l1)
+
+l1 = ["10","20","30","40","50"]
+l2 = list(map(int,l1))
+print(l2)
+
+l1 = [12,34,56,78,90]
+l2 = [8,21,59,88,20]
+l3 = list(map(lambda x,y:x+y,l1,l2))
+print(l3)
+
+#Recursion :
+# Calling function itself is called function recursion or recursive function call.
+# In function recursion calling function and called function both are same.
+# Function recursion uses stack (LIFO) for evaluating recursion calls.
+# Complex algorithms are solved in simple way using function recursion.
+
+# def func():
+#     print("Function 1")
+#     func()
+
+# import sys
+# print("Maximum limit :",sys.getrecursionlimit()) # to find max recursion limit
+
+# sys.setrecursionlimit(10)
+# print("Maximum limit :",sys.getrecursionlimit()) # to find max recursion limit
+# func()
+
+# recursion consist of 3 statements 
+# initialization statement
+#conditio statement
+#updation statement
+
+def fun(num):
+    if num>0:
+        fun(num-1)
+    print(f"Inside {num}")
+fun(5)
+
+# Write a program to find factorial of input number
+def find_factorial(num):
+    if num==0:
+        return 1
+    return num*find_factorial(num-1) # 5*find_factorial(4)
+
+n=int(input("Enter num to find fact :"))
+print(find_factorial(n))
+
+# Write a program to find count of digits in a given number
+c = 0
+def count_digit(num):
+    global c
+    if num>0:
+        c+=1
+        count_digit(num//10)
+    return c
+print(f"Total len of num : {count_digit(12389)}")
