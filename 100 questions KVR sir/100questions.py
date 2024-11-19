@@ -173,7 +173,9 @@ def generate_permutations(lst):
     print(permutations)
     for i in range(len(lst)):
         current = lst[i]
+        print(current)
         remaining = lst[:i] + lst[i+1:]
+        print(lst[:i] , lst[i+1:])
         for perm in generate_permutations(remaining):
             permutations.append([current] + perm)
             print([current],perm)
