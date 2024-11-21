@@ -1305,21 +1305,160 @@ print(l2)
 
 
 #find subarrays
-def find_subarrays(arr):
-    subarrays = []
-    n = len(arr)
-    for start in range(n):
-        for end in range(start, n):
-            subarrays.append(arr[start:end+1])
+# def find_subarrays(arr):
+#     subarrays = []
+#     n = len(arr)
+#     for start in range(n):
+#         for end in range(start, n):
+#             subarrays.append(arr[start:end+1])
     
     # return subarrays
-    for i in subarrays:
-        if sum(i)==k:
-            return len(i)
-    else:
-        return -1
+    # for i in subarrays:
+    #     if sum(i)==k:
+    #         return len(i)
+    # else:
+    #     return -1
 
-arr = [48,99,37,4,-31]
-subarrays = find_subarrays(arr)
-subarrays.sort()
-print(subarrays)
+# arr = [48,99,37,4,-31]
+# subarrays = find_subarrays(arr)
+# subarrays.sort()
+# print(subarrays)
+
+
+# Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+# An input string is valid if:
+# Open brackets must be closed by the same type of brackets.
+# Open brackets must be closed in the correct order.
+# Every close bracket has a corresponding open bracket of the same type.
+# Example 1:
+# Input: s = "()"
+# Output: true
+
+# Example 2:
+# Input: s = "()[]{}"
+# Output: true
+
+# Example 3:
+# Input: s = "(]"
+# Output: false
+
+# Example 4:
+# Input: s = "([])"
+# Output: true
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        l1 = []#(
+        dict1 = {')':'(',']':'[','}':'{'}
+        for i in s:
+            if i in dict1.values():
+                l1.append(i)
+            elif i in dict1:
+                if not l1 or l1[-1] != dict1[i]:
+                    return False
+                l1.pop()
+        return not l1
+        
+# chars = ["a","a","b","b","c","c","c"]
+# Output: Return 6, and the first 6 characters of the input array should be: ["a","2","b","2","c","3"]
+
+chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
+l1 = []
+for i in chars:
+    if i not in l1:
+        l1.append(i)
+        c = chars.count(i)
+        l1.append(str(c))
+            
+print(l1)
+
+
+def permutations(s):
+    result = []
+    s = list(s)
+    def find_permutations(start):
+        if start == len(s):
+            result.append(''.join(s))  # Join the list into a string and store it
+            return
+        
+        for i in range(start,len(s)):
+            s[start], s[i] = s[i], s[start]
+            print(s[start], s[i])
+            find_permutations(start+1)
+            s[start], s[i] = s[i], s[start]
+    find_permutations(0)
+    return result
+
+# print(permutations("abc"))
+
+# Given two strings s1 and s2, return true if s2 contains a 
+# permutation
+#  of s1, or false otherwise.
+# In other words, return true if one of s1's permutations is the substring of s2.
+
+# Input: s1 = "ab", s2 = "eidbaooo"
+# Output: true
+# Explanation: s2 contains one permutation of s1 ("ba").
+
+# class Solution(object):
+#     def permutations(self,s):
+#         result = []
+#         s = list(s)
+#         def find_permutations(start):
+#             if start == len(s):
+#                 result.append(''.join(s)) 
+#                 return
+            
+#             for i in range(start,len(s)):
+#                 s[start], s[i] = s[i], s[start]
+#                 find_permutations(start+1)
+#                 s[start], s[i] = s[i], s[start]
+#         find_permutations(0)
+#         return result
+
+    # def checkInclusion(self, s1, s2):
+    #     l1 = self.permutations(s1)
+    #     for i in l1:
+    #         if i in s2:
+    #             return True
+    #     else:
+    #         return False
+        
+# a = Solution()
+# print(a.permutations("abc"))
+
+l1 = []
+def permutations(string,i=0):
+    if i==len(string):
+        s = "".join(string)
+        l1.append(s)
+
+    for j in range(i,len(string)):
+        word = [ch for ch in string]
+        word[i],word[j]=word[j],word[i]
+        permutations(word,i+1)
+    return l1
+print(permutations("abc"))
+
+
+def containsNearbyDuplicate(nums, k):
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i]==nums[j]:
+                    if i-j<=k:
+                        return True
+        return False
+print(containsNearbyDuplicate([1,2,3,1],3))
+
+
+# match = "Harshal"
+# print(match)
+# opt = int(input("Enter option :"))
+# match opt:
+#     case 1:
+#         print("1")
+#     case 2:
+#         print("2")
+#     case _:
+#         print("_")
+

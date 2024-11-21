@@ -165,6 +165,10 @@
 
 # # 18. Write a Python program to generate all permutations of a list in Python.
 
+from itertools import permutations
+numbers=[1,2,3]
+print(list(permutations(numbers)))
+
 def generate_permutations(lst):
     if len(lst) == 1:
         return [lst]
@@ -182,8 +186,8 @@ def generate_permutations(lst):
     return permutations
 
 my_list = [1, 2, 3]
-permutations = generate_permutations(my_list)
-print(permutations)
+# permutations = generate_permutations(my_list)
+# print(permutations)
 # for perm in permutations:
 #     print(perm)
 
@@ -768,7 +772,7 @@ print(permutations)
 # # 	List reflecting the run-length encoding from the said string:
 # # 	[[1, 'a'], [1, 'u'], [1, 't'], [1, 'o'], [1, 'm'], [1, 'a'], [1, 't'], [1, 'i'], [1, 'c'], [1, 'a'], [2, 'l'], [1, 'y']]
 
-# l1 = [1, 1, 2, 3, 4, 4.3, 5, 1]
+l1 = [1, 1, 2, 3, 4, 4.3, 5, 1]
 
 
 # # 76. Write a Python program to create a list reflecting the modified run-length encoding from a given list of integers or a given list of characters. 
