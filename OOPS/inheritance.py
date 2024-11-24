@@ -97,7 +97,7 @@ print("Job :",w1.getjob())
 print("Salary :",w1.getsal())
 
 
-#Herarchical ing=heritance
+#Herarchical inheritance
 class A:
     def __init__(self) -> None:
         print("These is A class")
@@ -112,3 +112,29 @@ class C(A):
 
 c = C()
 b = B()
+
+
+#Hybrid inheritance
+class A:
+    def m1(self):
+        print("Method of A class")
+class B(A):
+    def m2(self):
+        print("Method of B class")
+class C(B):
+    def m3(self):
+        print("Method of C class")
+class D(B,A):
+    def m4(self):
+        print("Method of D class")
+
+obj = D()
+obj1 = C()
+obj.m1()
+obj.m2()
+obj.m4()
+# obj.m3()
+obj1.m1()
+obj1.m2()
+obj1.m3()
+
