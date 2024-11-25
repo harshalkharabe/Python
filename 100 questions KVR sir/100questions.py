@@ -772,7 +772,17 @@ my_list = [1, 2, 3]
 # # 	List reflecting the run-length encoding from the said string:
 # # 	[[1, 'a'], [1, 'u'], [1, 't'], [1, 'o'], [1, 'm'], [1, 'a'], [1, 't'], [1, 'i'], [1, 'c'], [1, 'a'], [2, 'l'], [1, 'y']]
 
-l1 = [1, 1, 2, 3, 4, 4.3, 5, 1]
+l1 = [1, 1, 2, 3, 4,6,6,6, 4.3, 5, 1]
+l2 = []
+c = 1
+for i in range(1,len(l1)):
+    if l1[i]==l1[i-1]:
+        c+=1
+    else:
+        l2.append([c,l1[i-1]])
+        c = 1
+l2.append([c,l1[-1]])
+print(l2)
 
 
 # # 76. Write a Python program to create a list reflecting the modified run-length encoding from a given list of integers or a given list of characters. 

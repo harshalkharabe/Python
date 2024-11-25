@@ -138,3 +138,20 @@ obj1.m1()
 obj1.m2()
 obj1.m3()
 
+class Human:
+    def __init__(self) -> None:
+        print("Human Being!")
+class Male(Human):
+    def __init__(self) -> None:
+        super().__init__()    
+        print("Gender Male")
+class Female(Human):
+    def __init__(cls) -> None:
+        super().__init__()
+        print("Gender Female")
+class child(Male,Female):
+    def __init__(self) -> None:
+        super().__init__() 
+        print("Child of Male and Female")
+
+c1 = child()
