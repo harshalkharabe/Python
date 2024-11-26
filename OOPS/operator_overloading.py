@@ -57,11 +57,55 @@ class players:
             return True
         return False
 
-p1 = players()
-p2 = players()
-p1.readplayer()
-p2.readplayer()
-p1.printplayer()
-p2.printplayer()
-isequal = p1==p2
-print(f"Both players score are equal : {isequal}")
+# p1 = players()
+# p2 = players()
+# p1.readplayer()
+# p2.readplayer()
+# p1.printplayer()
+# p2.printplayer()
+# isequal = p1==p2
+# print(f"Both players score are equal : {isequal}")
+
+
+
+class A:
+    def __init__(self) -> None:
+        self.num1 = None
+    
+    def read(self):
+        self.num1=int(input("Enter value :"))
+    
+    def info(self):
+        return self.num1
+
+    def __sub__(self,other):
+        result = A()
+        result.num1 = self.num1 - other.num1
+        return result
+
+a1 = A()
+b1 = A()
+a1.read()
+b1=A()
+b1.read()
+c1 = a1-b1
+print(b1.info())
+print(a1.info())
+print("Addition of a1-b1 :",c1.info())
+
+
+class Floor:
+    def __init__(self) -> None:
+        self.num = None
+    def read(self):
+        self.num = int(input("Enter val :"))
+    def __floordiv__(self,other):
+        f3 = Floor()
+        f3.num = self.num//other.num
+        return f3.num
+
+f1 = Floor()
+f2 = Floor()
+f1.read()
+f2.read()
+print("Floor division of these :",f1//f2)
