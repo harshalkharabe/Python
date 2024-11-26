@@ -1500,3 +1500,32 @@ class Solution:
 
 a = Solution()
 print(a.subsets([1,2,2]))
+
+
+def count_substring(string, sub_string):
+    c = 0
+    for i in range(len(string)-len(sub_string)+1):
+        print(string[i:len(sub_string)+i])
+        if string[i:len(sub_string)+i]==sub_string:
+            c+=1
+    return c
+
+print(count_substring("ABCDCDC","CDC"))
+
+# def reverse(x: int) -> int:
+#     res = 0
+#     if x<0:
+#         x = x*(-1)
+#         while x>0:
+#             r = x%10
+#             res = (res*10)+r
+#             x //= 10
+#         return -res
+
+# print(reverse(-1230))
+
+
+def fun():
+    print("Sagar")
+
+fun()
