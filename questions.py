@@ -1525,7 +1525,12 @@ print(count_substring("ABCDCDC","CDC"))
 # print(reverse(-1230))
 
 
-def fun():
-    print("Sagar")
+class Solution:
+    def transpose(self, matrix):
+        for i in range(len(matrix)):
+            for j in range(i+1,len(matrix[0])):
+                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+        return matrix
 
-fun()
+a = Solution()
+print(a.transpose([[1,2,3],[4,5,6],[7,8,9]]))
