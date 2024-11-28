@@ -1534,3 +1534,15 @@ class Solution:
 
 a = Solution()
 print(a.transpose([[1,2,3],[4,5,6],[7,8,9]]))
+
+
+def second_max(list1):
+    s1 = set(list1)
+    l1 = list(s1)
+    l1.sort()
+    if len(l1)==1:
+        return None
+    else:
+        sm = l1[-2]
+        return sm
+print(second_max([2]))
