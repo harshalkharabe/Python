@@ -375,7 +375,6 @@ fun1(3)
 a = list(filter(lambda x:x%2==0,[12,1,34,56,78]))
 print(a)
 
-
 list1=[1,2,3,4,5,6,7,0,0,0,0]
 b = list(filter(None,list1)) # it return true values
 print(b)
@@ -425,13 +424,13 @@ def fun(num):
 fun(5)
 
 # Write a program to find factorial of input number
-def find_factorial(num):
-    if num==0:
-        return 1
-    return num*find_factorial(num-1) # 5*find_factorial(4)
+# def find_factorial(num):
+#     if num==0:
+#         return 1
+#     return num*find_factorial(num-1) # 5*find_factorial(4)
 
-n=int(input("Enter num to find fact :"))
-print(find_factorial(n))
+# n=int(input("Enter num to find fact :"))
+# print(find_factorial(n))
 
 # Write a program to find count of digits in a given number
 c = 0
@@ -442,3 +441,12 @@ def count_digit(num):
         count_digit(num//10)
     return c
 print(f"Total len of num : {count_digit(12389)}")
+
+
+def findKthLargest(nums, k):
+    l1 = list(set(nums))
+    print(l1)
+    l1.sort()
+    return l1[-k]
+
+print(findKthLargest([3,2,3,1,2,4,5,5,6],4))
