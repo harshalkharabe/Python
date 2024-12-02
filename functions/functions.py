@@ -450,3 +450,17 @@ def findKthLargest(nums, k):
     return l1[-k]
 
 print(findKthLargest([3,2,3,1,2,4,5,5,6],4))
+
+def myAtoi(s: str) -> int:
+    s1 = ''
+    for i in range(len(s)):
+        if s[i]==' ':
+            continue
+        elif s[i].isalpha():
+            break
+        elif s[i]>='0' or s[i]<='9':
+            s1 += s[i]
+            print(s1)
+    n = int(s1)
+    return n
+
