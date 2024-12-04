@@ -120,11 +120,11 @@ s1 = set(test_list)
 d1 = {n:[i for i in test_list if i==n] for n in s1}
 print("Result : ",d1)
 
-d1 = {'name':'Harshal','age':21,'course':'python'}
+d1 = {}
 print(d1.popitem()) # return key:value in tuple
 print(d1)
-# print(d1.pop('course')) # it only return value of that key
+print(d1.pop('course')) # it only return value of that key
 # it also gives error if not not exist
-# print(d1)
-del d1['age'] # if key not exist then keyerror
 print(d1)
+# del d1['age'] # if key not exist then keyerror
+# print(d1)

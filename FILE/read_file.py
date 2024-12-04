@@ -42,3 +42,19 @@ print("Total alphabates in file :",alphacount)
 print("Total digits in file :",digitcount)
 print("Total special characters in file :",specialcount)
 fileobject.close()
+
+
+#Program for Demonstrating How to Open the File
+
+try:
+    with open('text.txt','r') as fobj:
+        print("Inside File.")
+        print("File opening mode :",fobj.name)
+        print("File opening mode :",fobj.mode)
+        print("Can we read data from File :",fobj.readable())
+        print("Can we write data from File :",fobj.writable())
+        print("Is file closed :",fobj.closed)
+        fobj.close()
+    print("file closed after opened :",fobj.closed)
+except FileNotFoundError:
+    print("File not found")

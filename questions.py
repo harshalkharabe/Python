@@ -1546,3 +1546,14 @@ def second_max(list1):
         sm = l1[-2]
         return sm
 print(second_max([2]))
+
+
+
+def addSpaces( s, spaces) -> str:
+    s1 = ''
+    for i in range(len(s)):
+        if i in spaces:
+            s1 += ' '
+        s1 = s1+s[i]
+    return s1
+print(addSpaces("LeetcodeHelpsMeLearn",[8,13,15]))
