@@ -54,7 +54,28 @@ fileobj.close()
 
 fileobj = open('sales.csv','r')
 csvobj = csv.DictReader(fileobj)
+c = 0
 for row in csvobj:
-    print(row)
+    c+=1
+    for key,val in row.items():
+        print(f"{key} --> {val}")
 fileobj.close()
 
+
+import csv
+
+colums = ['id','name','salary']
+data = [
+    [1,"Harshal Kharabe",'89000'],
+    [2,"Junal Aswar",'12900'],
+    [3,"Aniket Bhudke",'100000'],
+    [4,"Pratham Rakhonde",'72000'],
+    [5,"Sagar Dhok",'83000']
+]
+
+with open('emp_data.csv','w',newline='') as fileobj:
+    csvobj = csv.writer(fileobj)
+    csvobj.writerow(colums)
+    csvobj.writerows(data)
+    print("File write successfully.")
+fileobj.close()
