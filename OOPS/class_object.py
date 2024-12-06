@@ -217,3 +217,16 @@ p1.printPerson()
 p2.printPerson()
 p3.printPerson()
 person.count_of_person()
+
+
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+        print(f"Object {self.name} is created")
+
+    def __del__(self):
+        print(f"Destructor called for {self.name}, object is being destroyed")
+
+# Create an object
+obj = MyClass("TestObject")
+
