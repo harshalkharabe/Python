@@ -1568,3 +1568,30 @@ def getEncryptedString(s: str, k: int) -> str:
     return s1
 
 print(getEncryptedString("dart",3))
+print()
+print()
+
+def countKeyChanges(s: str) -> int:
+        c=0
+        for i in range(len(s)-1):
+            print(s[i],s[i+1])
+            if s[i].lower()==s[i+1].lower():pass
+            else:
+                c+=1
+        return c
+print(countKeyChanges("aAbB"))
+print()
+print()
+print()
+
+def mul(a,b):
+    if b == 0:
+        return 0
+    elif b>0:
+        return a+mul(a,b-1)
+    elif b<0:
+        return -a+mul(a,b+1)
+
+print("Mul : ",mul(4,6))
+print("Mul : ",mul(4,-6))
+print("Mul : ",mul(-4,-6))
