@@ -1557,3 +1557,14 @@ def addSpaces( s, spaces) -> str:
         s1 = s1+s[i]
     return s1
 print(addSpaces("LeetcodeHelpsMeLearn",[8,13,15]))
+
+
+def getEncryptedString(s: str, k: int) -> str:
+    s1 = ""*len(s)
+    for i in range(len(s)):
+        idx = (i+k)%len(s) 
+        print(idx)
+        s1 += s[idx]
+    return s1
+
+print(getEncryptedString("dart",3))
