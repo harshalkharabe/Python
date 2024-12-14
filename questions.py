@@ -1592,6 +1592,17 @@ def mul(a,b):
     elif b<0:
         return -a+mul(a,b+1)
 
-print("Mul : ",mul(4,6))
-print("Mul : ",mul(4,-6))
-print("Mul : ",mul(-4,-6))
+# print("Mul : ",mul(4,6))
+# print("Mul : ",mul(4,-6))
+# print("Mul : ",mul(-4,-6))
+
+
+l1 = [2,3,4,5,6,7,8,9]
+d1 = {i:l1[i] for i in range(len(l1))}
+# print(d1)
+
+def reverseInGroups(arr, k):
+    l1 = arr[k-1::-1]+arr[-1:-k:-1]
+    return l1
+
+print(reverseInGroups([1,2,3,4,5],3))
