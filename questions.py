@@ -1606,3 +1606,32 @@ def reverseInGroups(arr, k):
     return l1
 
 print(reverseInGroups([1,2,3,4,5],3))
+
+import re
+def isMatch(s: str, p: str) -> bool:
+        res = re.fullmatch(p,s)
+        return True if res else False
+
+print(isMatch(r"?a","ba"))
+
+def rotate(arr):
+        l1 = [0]*len(arr)
+        l1[0] = arr[-1]
+        for i in range(len(arr)-1):
+            l1[i+1]=arr[i]
+        return l1
+
+print(rotate([1,2,3,4,5]))
+
+
+
+n = 10
+count = 0
+for i in range(2,3):
+    c = 0
+    for J in range(1,i+1):
+        if i%J==0:
+            c+=1
+    if c==2:
+        count+=1
+print(c)
