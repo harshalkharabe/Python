@@ -1648,3 +1648,22 @@ def reverseArray(arr):
         return arr
 
 print(reverseArray([1,2,3,4,5]))
+print("====================================")
+def searchMatrix(matrix, target: int) -> bool:
+        for i in matrix:
+            for j in i:
+                print(i)
+                if target in i:
+                    return True
+        return False
+
+print(searchMatrix([[1,2],[4,5]],13))
+
+print("=======================================")
+def rotateArr(arr, d):
+        #Your code here
+        arr = arr[d:]+arr[:d]
+        return arr
+# arr[] = [1, 2, 3, 4, 5], d = 2
+# Output: [3, 4, 5, 1, 2]
+print(rotateArr([1, 2, 3, 4, 5],2))
