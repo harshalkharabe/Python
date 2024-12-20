@@ -124,3 +124,15 @@ print(result)
 for row in result:
     print(row)
 connection.close()
+
+
+print("===================================================")
+connection = mysql.connector.connect(database='harshalk',user='root',password='h@rshmysql')
+print("Connection Established..!")
+cur = connection.cursor()
+query = "Select * from Emp"
+cur.execute(query)
+res = cur.fetchall()
+for row in res:
+    print(row)
+connection.close()
