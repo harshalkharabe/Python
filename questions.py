@@ -1669,3 +1669,22 @@ def rotateArr(arr, d):
 print(rotateArr([1, 2, 3, 4, 5],2))
 print("=======================================")
 
+
+def isIsogram(s):
+        #Your code here
+        for i in s:
+            if s.count(i)>1:
+                return 0
+        return 1
+
+s = 'machine'
+print(isIsogram(s))
+
+
+def isIsogram(s):
+        if len(set(s))==len(s):
+            return 1
+        return 0
+
+s = 'machine'
+print(isIsogram(s))
