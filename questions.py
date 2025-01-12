@@ -1688,3 +1688,17 @@ def isIsogram(s):
 
 s = 'machine'
 print(isIsogram(s))
+
+email = 'harshalkharabe4@gmail.com'
+domain = 'gmil.com'
+dn = len(email)-len(domain)
+if domain==email[dn:]:
+    print("Exist")
+else:
+    print("Not Exist")
+
+
+#Find square root of number
+num = 25
+sqrt = num**0.5
+print(sqrt)
