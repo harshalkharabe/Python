@@ -1,0 +1,31 @@
+<mxfile host="65bd71144e">
+    <diagram id="GmBF36gxp8iPbRfFSBh9" name="Page-1">
+        <mxGraphModel dx="746" dy="1413" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="6" value="" style="edgeStyle=none;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;html=1;fontFamily=Times New Roman;fontSize=16;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;html=1;fontFamily=Times New Roman;fontSize=16;" edge="1" parent="1" source="2" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;p&gt;&lt;font face=&quot;Verdana&quot;&gt;MACHINE LEARNING&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=20;fontStyle=0;verticalAlign=middle;align=center;glass=0;shadow=0;fillStyle=auto;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="-530" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font face=&quot;Verdana&quot;&gt;Supervised&lt;br&gt;Learning&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=20;fontFamily=Architects Daughter;rounded=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontStyle=0;glass=0;shadow=0;fillStyle=auto;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="-440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;font face=&quot;Verdana&quot;&gt;Unsupervised&lt;br&gt;Learning&lt;/font&gt;" style="whiteSpace=wrap;html=1;fontSize=20;fontFamily=Architects Daughter;rounded=1;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontStyle=0;glass=0;shadow=0;fillStyle=auto;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="-440" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Machine Learning gives computers the ability to learn without explicit programming." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=1;hachureGap=4;jiggle=2;fillStyle=auto;curveFitting=1;fontFamily=Verdana;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="159" y="-700" width="480" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Field of study that gives computers the ability to learn without being explicit programmed." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=0;glass=0;sketch=1;hachureGap=4;jiggle=2;fillStyle=auto;curveFitting=1;fontFamily=Verdana;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="159" y="-610" width="481" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
