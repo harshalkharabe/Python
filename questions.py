@@ -1702,3 +1702,10 @@ else:
 num = 25
 sqrt = num**0.5
 print(sqrt)
+
+email = "harshalkharabe4@gmail.com"
+domain = 'com'
+email_domain = email.split("@")[1]
+print(email_domain)
+if email_domain == domain:
+    print("The domain matches!")
