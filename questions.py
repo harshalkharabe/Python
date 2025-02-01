@@ -1709,3 +1709,17 @@ email_domain = email.split("@")[1]
 print(email_domain)
 if email_domain == domain:
     print("The domain matches!")
+
+
+# Find Third largest number in list
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        max_1,max_2,max_3=0,0,0
+        nums.sort()
+        max_1 = nums[-1]
+        if nums.count(max_1)<len(nums):
+            max_2 = nums[-(nums.count(max_1))-1]
+        if (nums.count(max_1)+nums.count(max_2))<len(nums):
+            max_3 = nums[-(nums.count(max_1)+nums.count(max_2))-1]
+            return max_3
+        return max_1
