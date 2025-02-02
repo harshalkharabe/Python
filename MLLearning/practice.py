@@ -1,26 +1,42 @@
-# import pandas as pd
-# import numpy as np
-# from sklearn.model_selection import train_test_split
-# from sklearn.linear_model import LogisticRegression
-# from sklearn.metrics import accuracy_score
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
-# # Load sample data
-# data = pd.read_csv('D:\TUTORIAL\PYTHON FULL STACK\PYTHON\MLLearning\customer_data.csv')  # Assuming you have a CSV file
+# Simple dataset
+data = {
+    'Size': [750, 800, 850, 1000, 1200],
+    'Price': [150, 170, 180, 210, 240]
+}
+df = pd.DataFrame(data)
+print(df)
 
-# # Assume the data has columns 'Age', 'Salary', and 'BoughtProduct' (0 = No, 1 = Yes)
-# X = data[['Age', 'Salary']]  # Features
-# y = data['BoughtProduct']  # Labels
+plt.scatter(df['Size'], df['Price'], color='blue')
+plt.xlabel("Size (sq ft)")
+plt.ylabel("Price ($1000)")
+plt.title("House Size vs Price")
+plt.show()
 
-# # Split data into training and testing sets
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+X = df[['Size']]  # Features (independent variable)
+y = df['Price']   # Labels (dependent variable)
 
-# # Train a Logistic Regression model
-# model = LogisticRegression()
-# model.fit(X_train, y_train)
+# Split into training and testing sets (80% training, 20% testing)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+model = LinearRegression()
+model.fit(X_train, y_train)
 
-# # Make predictions
-# predictions = model.predict(X_test)
+predictions = model.predict(X_test)
+print("Predicted Prices:", predictions)
+print("Actual Prices:", list(y_test))
 
-# # Evaluate model accuracy
-# accuracy = accuracy_score(y_test, predictions)
-# print(f"Model accuracy: {accuracy * 100}%")
+# Visualize predictions
+plt.scatter(X_test, y_test, color='red', label='Actual Prices')
+plt.plot(X_test, predictions, color='blue', label='Predicted Prices')
+plt.legend()
+plt.show()
+
+print("Model Coefficient (Slope):", model.coef_[0])
+print("Model Intercept:", model.intercept_)
+
+print(f"Prediction Formula: Price = {model.coef_[0]} * Size + {model.intercept_}")
