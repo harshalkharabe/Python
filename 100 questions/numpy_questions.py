@@ -336,9 +336,9 @@
 # mse = np.mean((arr1 - arr2) ** 2)
 # print(mse)
  
-# 1.0
-# Exercise 38:
-# Replace all negative values in an array with 0.
+# # 1.0
+# # Exercise 38:
+# # Replace all negative values in an array with 0.
 # import numpy as np
 # arr = np.array([-1, 2, -3, 4, -5])
 # arr[arr < 0] = 0
@@ -363,52 +363,52 @@
 # determinant = np.linalg.det(matrix)
 # print(determinant)
  
-# 0.0019446951056262907
-# Exercise 41:
-# Count the number of elements in an array that are greater than the mean.
+# # 0.0019446951056262907
+# # Exercise 41:
+# # Count the number of elements in an array that are greater than the mean.
 # import numpy as np
 # arr = np.array([1, 2, 3, 4, 5])
 # count_above_mean = np.sum(arr > np.mean(arr))
 # print(count_above_mean)
  
 # 2
-# Exercise 42:
-# Calculate the square root of each element in a 1D array.
+# # Exercise 42:
+# # Calculate the square root of each element in a 1D array.
 # import numpy as np
 # arr = np.array([4, 9, 16, 25])
 # sqrt_arr = np.sqrt(arr)
 # print(sqrt_arr)
  
-# [2. 3. 4. 5.]
-# Exercise 43:
-# Create a 3x3 matrix and compute the matrix square root.
+# # [2. 3. 4. 5.]
+# # Exercise 43:
+# # Create a 3x3 matrix and compute the matrix square root.
 # import numpy as np
 # matrix = np.random.random((3, 3))
 # matrix_sqrt = np.linalg.matrix_power(matrix, 2)
 # print(matrix_sqrt)
  
-# [[0.62607741 0.64326801 0.24778017]
-#  [1.35236384 1.43972006 0.56587005]
-#  [0.617024   0.71519995 0.29469311]]
+# # [[0.62607741 0.64326801 0.24778017]
+# #  [1.35236384 1.43972006 0.56587005]
+# #  [0.617024   0.71519995 0.29469311]]
 
-# Exercise 44:
-# Convert the data type of an array to float.
+# # Exercise 44:
+# # Convert the data type of an array to float.
 # import numpy as np
 # arr = np.array([1, 2, 3, 4], dtype=int)
 # float_arr = arr.astype(float)
 # print(float_arr)
  
 # [1. 2. 3. 4.]
-# Exercise 45:
-# Calculate the element-wise absolute values of an array.
+# # Exercise 45:
+# # Calculate the element-wise absolute values of an array.
 # import numpy as np
 # arr = np.array([-1, -2, 3, -4])
 # abs_values = np.abs(arr)
 # print(abs_values)
  
 # [1 2 3 4]
-# Exercise 46:
-# Find the indices where elements of two arrays match.
+# # Exercise 46:
+# # Find the indices where elements of two arrays match.
 # import numpy as np
 # arr1 = np.array([1, 2, 3, 4, 5])
 # arr2 = np.array([3, 2, 8, 4, 5])

@@ -1730,3 +1730,5 @@ def leftRotate(self, arr, k):
     k = k % n  # Handle cases where k > n
     arr[:] = arr[k:] + arr[:k]  # Modify in-place
     return arr  # Optional, if returning is needed
+
+
