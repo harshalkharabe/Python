@@ -49,3 +49,7 @@ for ch in str:
     else:
         str2=str2+ch
 print(f"Sring in upper case is {str2}")
+
+
+for i in "Range":
+    print(i,end='\t')
