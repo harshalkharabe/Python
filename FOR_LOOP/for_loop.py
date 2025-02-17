@@ -53,3 +53,7 @@ print(f"Sring in upper case is {str2}")
 
 for i in "Range":
     print(i,end='\t')
+
+print()
+for name in ["Harshal","Kharabe","Paa","Bhudke"]:
+    print(name)
