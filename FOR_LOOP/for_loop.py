@@ -50,10 +50,17 @@ for ch in str:
         str2=str2+ch
 print(f"Sring in upper case is {str2}")
 
-
-for i in "Range":
-    print(i,end='\t')
-
-print()
-for name in ["Harshal","Kharabe","Paa","Bhudke"]:
-    print(name)
+def countMatches(items,ruleKey,ruleValue):
+    l1=[]
+    rk = ruleKey
+    c=0
+    for i,j,k in items:
+        d1 = {}
+        d1["type"]=i
+        d1["color"]=j
+        d1["name"]=k
+        l1.append(d1)
+        k = d1.get(rk)
+        if k==ruleValue:
+            c+=1
+    return c
