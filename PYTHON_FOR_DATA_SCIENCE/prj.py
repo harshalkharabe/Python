@@ -59,7 +59,7 @@ while True:
         lm11 = lmList[11][1:3]
         lm12 = lmList[12][1:3]
 
-        if lm11[0] != lm12[0]:  
+        if lm11[0] != lm12[0]:
             widthOfShirt = int(abs(lm11[0] - lm12[0]) * fixedRatio)
             
             if widthOfShirt > 0:
