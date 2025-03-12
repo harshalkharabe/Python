@@ -1,182 +1,105 @@
-import os
-import numpy as np
-import cvzone
 import cv2
-from cvzone.PoseModule import PoseDetector
+import numpy as np
+import mediapipe as mp
+import os
 
+# Initialize Mediapipe Pose
+mp_pose = mp.solutions.pose
+pose = mp_pose.Pose()
 
-def add_alpha_channel(img):
-    """ Convert a 3-channel BGR image to a 4-channel BGRA image with an alpha mask. """
-    b, g, r = cv2.split(img)
-    alpha = np.ones(b.shape, dtype=b.dtype) * 255  # Create an alpha mask (fully visible)
-    return cv2.merge([b, g, r, alpha])
+# Load all T-shirt images from the directory
+tshirt_dir = "D:/TUTORIAL/PYTHON FULL STACK/PYTHON/PYTHON_FOR_DATA_SCIENCE/Shirts"
+tshirt_files = sorted([f for f in os.listdir(tshirt_dir) if f.endswith(".png")])
+tshirt_images = [cv2.imread(os.path.join(tshirt_dir, f), cv2.IMREAD_UNCHANGED) for f in tshirt_files]
 
+# Track current T-shirt index
+current_tshirt_index = 0
 
-cap = cv2.VideoCapture("D:/TUTORIAL/PYTHON FULL STACK/PYTHON/PYTHON_FOR_DATA_SCIENCE/Shirts/Videos/1.mp4")
-if not cap.isOpened():
-    print("Error: Could not open video file.")
-    exit()
+# Define button positions
+left_button_pos = (50, 300)  # (x, y)
+right_button_pos = (550, 300)
+button_radius = 40
 
-detector = PoseDetector()
+def overlay_transparent(background, overlay, x, y):
+    """Overlay transparent image on the background."""
+    h, w, _ = overlay.shape
+    bh, bw, _ = background.shape
 
-shirtFolderPath = "D:/TUTORIAL/PYTHON FULL STACK/PYTHON/PYTHON_FOR_DATA_SCIENCE/Shirts"
+    # Ensure overlay does not go out of bounds
+    if x + w > bw:
+        w = bw - x
+    if y + h > bh:
+        h = bh - y
 
-if not os.path.isdir(shirtFolderPath):
-    print(f"Error: The directory '{shirtFolderPath}' does not exist.")
-    exit()
+    overlay_resized = cv2.resize(overlay, (w, h))
+    alpha = overlay_resized[:, :, 3] / 255.0  # Extract alpha channel
 
-listShirts = os.listdir(shirtFolderPath)
-
-if not listShirts:
-    print("Error: No shirts found in the directory.")
-    exit()
-# print(listShirts)
-fixedRatio = 262 / 190  # widthOfShirt/widthOfPoint11to12
-shirtRatioHeightWidth = 581 / 440
-imageNumber = 0
-# imgButtonRight = cv2.imread(f"{shirtFolderPath}/button.jpg", cv2.IMREAD_UNCHANGED)
-# Ensure button images have an alpha channel
-imgButtonRight = cv2.imread(f"{shirtFolderPath}/button.jpg", cv2.IMREAD_UNCHANGED)
-if imgButtonRight.shape[-1] == 3:  # Convert to RGBA if it's RGB
-    imgButtonRight = cv2.cvtColor(imgButtonRight, cv2.COLOR_BGR2BGRA)
-
-# imgButtonLeft = cv2.flip(imgButtonRight, 1)
-imgButtonLeft = cv2.flip(imgButtonRight, 1)
-counterRight = 0
-counterLeft = 0
-selectionSpeed = 10
-
-while True:
-    success, img = cap.read()
-    if not success:
-        print("Error: Could not read video frame.")
-        break
-
-    img = detector.findPose(img)
-    lmList, bboxInfo = detector.findPosition(img, bboxWithHands=False, draw=False)
+    for c in range(3):  # Apply blending for RGB channels
+        background[y:y + h, x:x + w, c] = np.clip(
+            alpha * overlay_resized[:, :, c] + (1 - alpha) * background[y:y + h, x:x + w, c], 0, 255
+        )
     
-    if lmList and len(lmList) > 12:
-        lm11 = lmList[11][1:3]
-        lm12 = lmList[12][1:3]
+    return background
 
-        if lm11[0] != lm12[0]:
-            widthOfShirt = int(abs(lm11[0] - lm12[0]) * fixedRatio)
-            
-            if widthOfShirt > 0:
-                print(f"Shirt width: {widthOfShirt}")
-            else:
-                print("Error: Calculated widthOfShirt is zero or negative.")
-                continue
-        else:
-            print("Error: lm11 and lm12 are too close together.")
-            continue
+# Mouse click event function
+def mouse_click(event, x, y, flags, param):
+    global current_tshirt_index
+    if event == cv2.EVENT_LBUTTONDOWN:
+        # Check if left button clicked
+        if ((x - left_button_pos[0])**2 + (y - left_button_pos[1])**2) < (button_radius**2):
+            current_tshirt_index = (current_tshirt_index - 1) % len(tshirt_images)
         
-        shirtPath = os.path.join(shirtFolderPath, listShirts[imageNumber])
-        imgShirt = cv2.imread(os.path.join(shirtFolderPath, listShirts[imageNumber]), cv2.IMREAD_UNCHANGED)
-        # Check if conversion is needed
-        if imgShirt.shape[-1] != 4:
-            print(f"Converting {listShirts[imageNumber]} to PNG format with alpha channel")
-            imgShirt = add_alpha_channel(imgShirt)
-        # Check if imgShirt is loaded properly
-        # widthOfShirt = int(abs(lm11[0] - lm12[0]) * fixedRatio)
-        if imgShirt is None:
-            print(f"Error: Could not load {listShirts[imageNumber]}")
-            continue  # Skip this frame
+        # Check if right button clicked
+        elif (x - right_button_pos[0])**2 + (y - right_button_pos[1])**2 < button_radius**2:
+            current_tshirt_index = (current_tshirt_index + 1) % len(tshirt_images)
 
-        # Ensure widthOfShirt is valid
-        if widthOfShirt <= 0:
-            print(f"Error: Invalid widthOfShirt: {widthOfShirt}")
-            continue  # Skip this frame
+# Open Camera
+cap = cv2.VideoCapture(0)
+cv2.namedWindow("Virtual Try-On")
+cv2.setMouseCallback("Virtual Try-On", mouse_click)
 
-        # Resize only if valid
-        # imgShirt = cv2.resize(imgShirt, (widthOfShirt, int(widthOfShirt * shirtRatioHeightWidth)))
-        
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+    
+    # Convert to RGB for Mediapipe
+    rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    result = pose.process(rgb_frame)
 
-        # widthOfShirt = int((lm11[0] - lm12[0]) * fixedRatio)
-        imgShirt = cv2.resize(imgShirt, (widthOfShirt, int(widthOfShirt * shirtRatioHeightWidth)))
+    if result.pose_landmarks:
+        landmarks = result.pose_landmarks.landmark
 
-        currentScale = (lm11[0] - lm12[0]) / 190
-        offset = int(44 * currentScale), int(48 * currentScale)
+        # Get key points
+        left_shoulder = (int(landmarks[11].x * frame.shape[1]), int(landmarks[11].y * frame.shape[0]))
+        right_shoulder = (int(landmarks[12].x * frame.shape[1]), int(landmarks[12].y * frame.shape[0]))
+        left_hip = (int(landmarks[23].x * frame.shape[1]), int(landmarks[23].y * frame.shape[0]))
+        right_hip = (int(landmarks[24].x * frame.shape[1]), int(landmarks[24].y * frame.shape[0]))
 
-        try:
-            img = cvzone.overlayPNG(img, imgShirt, (lm12[0] - offset[0], lm12[1] - offset[1]))
-        except Exception as e:
-            print("Error overlaying image:", e)
+        # Calculate midpoints for better alignment
+        chest_center = ((left_shoulder[0] + right_shoulder[0]) // 2, (left_shoulder[1] + right_shoulder[1]) // 2)
+        torso_height = abs(left_hip[1] - chest_center[1])
 
-        img = cvzone.overlayPNG(img, imgButtonRight, (1074, 293))
-        img = cvzone.overlayPNG(img, imgButtonLeft, (72, 293))
+        # T-shirt dimensions
+        tshirt_width = abs(right_shoulder[0] - left_shoulder[0]) * 2
+        tshirt_height = int(torso_height * 1.4)  # Extend slightly for better fit
 
-        if lmList[16][1] < 300:
-            counterRight += 1
-            cv2.ellipse(img, (139, 360), (66, 66), 0, 0, counterRight * selectionSpeed, (0, 255, 0), 20)
-            if counterRight * selectionSpeed > 360:
-                counterRight = 0
-                if imageNumber < len(listShirts) - 1:
-                    imageNumber += 1
+        # Resize and overlay T-shirt
+        tshirt_resized = cv2.resize(tshirt_images[current_tshirt_index], (tshirt_width, tshirt_height))
+        frame = overlay_transparent(frame, tshirt_resized, chest_center[0] - tshirt_width // 2, chest_center[1])
 
-        elif lmList[15][1] > 900:
-            counterLeft += 1
-            cv2.ellipse(img, (1138, 360), (66, 66), 0, 0, counterLeft * selectionSpeed, (0, 255, 0), 20)
-            if counterLeft * selectionSpeed > 360:
-                counterLeft = 0
-                if imageNumber > 0:
-                    imageNumber -= 1
-        else:
-            counterRight = 0
-            counterLeft = 0
+    # Draw clickable buttons
+    cv2.circle(frame, left_button_pos, button_radius, (255, 0, 0), -1)  # Left button
+    cv2.circle(frame, right_button_pos, button_radius, (255, 0, 0), -1)  # Right button
+    cv2.putText(frame, "<", (left_button_pos[0] - 15, left_button_pos[1] + 10), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 3)
+    cv2.putText(frame, ">", (right_button_pos[0] - 15, right_button_pos[1] + 10), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 3)
 
-    cv2.imshow("Image", img)
-    if cv2.waitKey(1) & 0xFF == ord('q'):  # Press 'q' to exit
+    # Show Output
+    cv2.imshow("Virtual Try-On", frame)
+
+    # Exit when 'q' is pressed
+    if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 cap.release()
 cv2.destroyAllWindows()
-
-# while True:
-#     success, img = cap.read()
-#     img = detector.findPose(img)
-#     # img = cv2.flip(img,1)
-#     lmList, bboxInfo = detector.findPosition(img, bboxWithHands=False, draw=False)
-#     if lmList:
-#         # center = bboxInfo["center"]
-#         lm11 = lmList[11][1:3]
-#         lm12 = lmList[12][1:3]
-#         imgShirt = cv2.imread(os.path.join(shirtFolderPath, listShirts[imageNumber]), cv2.IMREAD_UNCHANGED)
-
-#         widthOfShirt = int((lm11[0] - lm12[0]) * fixedRatio)
-#         print(widthOfShirt)
-#         imgShirt = cv2.resize(imgShirt, (widthOfShirt, int(widthOfShirt * shirtRatioHeightWidth)))
-#         currentScale = (lm11[0] - lm12[0]) / 190
-#         offset = int(44 * currentScale), int(48 * currentScale)
-
-#         try:
-#             img = cvzone.overlayPNG(img, imgShirt, (lm12[0] - offset[0], lm12[1] - offset[1]))
-#         except:
-#             pass
-
-#         img = cvzone.overlayPNG(img, imgButtonRight, (1074, 293))
-#         img = cvzone.overlayPNG(img, imgButtonLeft, (72, 293))
-
-#         if lmList[16][1] < 300:
-#             counterRight += 1
-#             cv2.ellipse(img, (139, 360), (66, 66), 0, 0,
-#                         counterRight * selectionSpeed, (0, 255, 0), 20)
-#             if counterRight * selectionSpeed > 360:
-#                 counterRight = 0
-#                 if imageNumber < len(listShirts) - 1:
-#                     imageNumber += 1
-#         elif lmList[15][1] > 900:
-#             counterLeft += 1
-#             cv2.ellipse(img, (1138, 360), (66, 66), 0, 0,
-#                         counterLeft * selectionSpeed, (0, 255, 0), 20)
-#             if counterLeft * selectionSpeed > 360:
-#                 counterLeft = 0
-#                 if imageNumber > 0:
-#                     imageNumber -= 1
-
-#         else:
-#             counterRight = 0
-#             counterLeft = 0
-
-#     cv2.imshow("Image", img)
-#     cv2.waitKey(1)
