@@ -1,0 +1,11 @@
+id,	foreign_key,unique_key,	name,	age,	email,	phone,	address,	salary,	department,	joining_date,	is_active,	performance_score,	project_assigned,	remarks,
+ID_1,	FK_12,	UK_1,   Alice,	35,	user1@example.com,	+91-9876543210,	Mumbai,	50000,	IT,	2020-01-01,	True,	7,	Project A,	Good
+ID_2,	FK_34,	UK_2,   Bob,	42,	user2@example.com,	+91-9812345678,	Delhi,	75000,	Finance,	2020-01-02,	False,	6,	Project B,	Excellent
+ID_3,	FK_23,	UK_3,   Charlie,	28,	user3@example.com,	+91-9898989898,	Bangalore,	65000,	HR,	2020-01-03,	True,	9,	Project C,	Needs Improvement
+ID_4,	FK_15,	UK_4,   David,	50,	user4@example.com,	+91-9823456789,	Chennai,	82000,	Marketing,	2020-01-04,	False,	5,	Project D,	Average
+ID_5,	FK_42,	UK_5,   Eve,	31,	user5@example.com,	+91-9845678901,	Pune,	90000,	Operations,	2020-01-05,	True,	8,	Project A,	Good
+ID_6,	FK_9,	UK_6,   Alice,	29,	user6@example.com,	+91-9865432109,	Delhi,	67000,	IT,	2020-01-06,	False,	4,	Project B,	Excellent
+ID_7,	FK_18,	UK_7,   Bob,	36,	user7@example.com,	+91-9887654321,	Mumbai,	45000,	HR,	2020-01-07,	True,	7,	Project C,	Needs Improvement
+ID_8,	FK_27,	UK_8,   Charlie,	40,	user8@example.com,	+91-9832109876,	Chennai,	72000,	Finance,	2020-01-08,	False,	6,	Project D,	Average
+ID_9,	FK_33,	UK_9,   David,	25,	user9@example.com,	+91-9878901234,	Pune,	56000,	Marketing,	2020-01-09,	True,	9,	Project A,	Good
+ID_10,	FK_11,	UK_10,	Eve,	45,	user10@example.com,	+91-9811122334,	Bangalore,	85000,	Operations,	2020-01-10,	False,	5,	Project B,	Excellent
