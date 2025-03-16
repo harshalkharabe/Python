@@ -9,4 +9,3 @@ ID_7,	FK_18,	UK_7,   Bob,	36,	user7@example.com,	+91-9887654321,	Mumbai,	45000,	
 ID_8,	FK_27,	UK_8,   Charlie,	40,	user8@example.com,	+91-9832109876,	Chennai,	72000,	Finance,	2020-01-08,	False,	6,	Project D,	Average
 ID_9,	FK_33,	UK_9,   David,	25,	user9@example.com,	+91-9878901234,	Pune,	56000,	Marketing,	2020-01-09,	True,	9,	Project A,	Good
 ID_10,	FK_11,	UK_10,	Eve,	45,	user10@example.com,	+91-9811122334,	Bangalore,	85000,	Operations,	2020-01-10,	False,	5,	Project B,	Excellent
-ID_10,	FK_11,	UK_10,	Eve,	45,	user10@example.com,	+91-9811122334,	Bangalore,	85000,	Operations,	2020-01-10,	False,	5,	Project B,	Excellent
