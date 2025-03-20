@@ -1712,17 +1712,17 @@ if email_domain == domain:
 
 
 # Find Third largest number in list
-class Solution:
-    def thirdMax(self, nums: List[int]) -> int:
-        max_1,max_2,max_3=0,0,0
-        nums.sort()
-        max_1 = nums[-1]
-        if nums.count(max_1)<len(nums):
-            max_2 = nums[-(nums.count(max_1))-1]
-        if (nums.count(max_1)+nums.count(max_2))<len(nums):
-            max_3 = nums[-(nums.count(max_1)+nums.count(max_2))-1]
-            return max_3
-        return max_1
+# class Solution:
+#     def thirdMax(self, nums: List[int]) -> int:
+#         max_1,max_2,max_3=0,0,0
+#         nums.sort()
+#         max_1 = nums[-1]
+#         if nums.count(max_1)<len(nums):
+#             max_2 = nums[-(nums.count(max_1))-1]
+#         if (nums.count(max_1)+nums.count(max_2))<len(nums):
+#             max_3 = nums[-(nums.count(max_1)+nums.count(max_2))-1]
+#             return max_3
+        # return max_1
     
 
 def leftRotate(self, arr, k):
@@ -1732,3 +1732,19 @@ def leftRotate(self, arr, k):
     return arr  # Optional, if returning is needed
 
 
+# Upper to Lower
+s="harshal"
+s1 = ""
+for i in s:
+    s1+=chr(ord(i)-32)
+print("Upper :",s1)
+
+#User input Upper to Lower
+s=input("Enter your name : ")
+s1 = ""
+for i in s:
+    if (i>="a" and i<="z"):
+        s1+=chr(ord(i)-32)
+    elif (i>="A" and i<="Z"):
+        s1+=chr(ord(i)+32)
+print("Upper :",s1)
