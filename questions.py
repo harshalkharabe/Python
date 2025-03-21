@@ -1748,3 +1748,50 @@ for i in s:
     elif (i>="A" and i<="Z"):
         s1+=chr(ord(i)+32)
 print("Upper :",s1)
+
+
+# Find maximum sub-array sum.
+def subarrsum(arr):
+    max_sum = max_sum = float('-inf')
+    current_sum=0
+    for num in arr:
+        current_sum += num
+        max_sum = max(max_sum, current_sum)
+
+        if current_sum < 0:
+            current_sum = 0
+
+    return max_sum
+
+print("Max sum : ",subarrsum([-2,1,-3,4,-1,2,1,-5,4]))
+
+
+# Find maximum sub-array sum with sub-array.
+def findmaxsubarray(arr):
+    max_sum = float('-inf')
+    current_sum = 0
+    start = end = temp_start = 0
+
+    for i, num in enumerate(arr):
+        current_sum += num
+
+        if current_sum > max_sum:
+            max_sum = current_sum
+            start = temp_start
+            end = i
+
+        if current_sum < 0:
+            current_sum = 0
+            temp_start = i + 1
+
+    return max_sum, arr[start:end + 1]
+
+print("Max sum and sub-array : ",findmaxsubarray([-2,1,-3,4,-1,2,1,-5,4]))
+
+
+lst = ['yyyy-mm-dd', 'yyyy/mm/dd', 'dd-mm-yyyy', 'dd/mm/yyyy', 'mm/dd/yyyy', 'mm-dd-yyyy', 'yyyy-dd-mm', 'yyyy/dd/mm']
+f = 'yyyy-mm-dd'
+if f not in lst:
+    print("Not Exist")
+else:
+    print("Exist")
