@@ -1607,6 +1607,7 @@ def reverseInGroups(arr, k):
 
 print(reverseInGroups([1,2,3,4,5],3))
 
+from collections import deque
 import re
 def isMatch(s: str, p: str) -> bool:
         res = re.fullmatch(p,s)
@@ -1795,3 +1796,31 @@ if f not in lst:
     print("Not Exist")
 else:
     print("Exist")
+
+
+# Given an array arr[] of integers and an integer k, your task is to find the maximum value for each contiguous subarray of size k. The output should be an array of maximum values corresponding to each contiguous subarray.
+def max_of_subarrays(arr, n, k):
+    if not arr or k == 0:
+        return []
+
+    n = len(arr)
+    result = []
+    dq = deque()
+
+    for i in range(n):
+        # Remove elements that are out of this window
+        if dq and dq[0] < i - k + 1:
+            dq.popleft()
+
+        # Remove all elements smaller than the current element (they won't be needed)
+        while dq and arr[dq[-1]] < arr[i]:
+            dq.pop()
+
+        # Add current element index to the deque
+        dq.append(i)
+
+        # Add maximum element of current window to result (from index k-1 onwards)
+        if i >= k - 1:
+            result.append(arr[dq[0]])
+
+    return result
