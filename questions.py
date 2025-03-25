@@ -1824,3 +1824,7 @@ def max_of_subarrays(arr, n, k):
             result.append(arr[dq[0]])
 
     return result
+
+i=[0,1,2,3]
+for i[-1] in i:
+    print(i[-1])
