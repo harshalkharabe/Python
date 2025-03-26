@@ -1825,6 +1825,29 @@ def max_of_subarrays(arr, n, k):
 
     return result
 
-i=[0,1,2,3]
-for i[-1] in i:
-    print(i[-1])
+
+def expand_around_center(s, left, right):
+    while left >= 0 and right < len(s) and s[left] == s[right]:
+        left -= 1            
+        right += 1
+    return s[left + 1:right] 
+
+def findLongestpalindrome(s):
+    if not s:
+        return ""
+
+    longest = ""
+    
+    for i in range(len(s)):
+        # Odd-length palindromes (center at i)
+        palindrome1 = expand_around_center(s, i, i)
+        # Even-length palindromes (center between i and i+1)
+        palindrome2 = expand_around_center(s, i, i + 1)
+
+        # Choose the longer palindrome
+        if len(palindrome1) > len(longest):
+            longest = palindrome1
+        if len(palindrome2) > len(longest):
+            longest = palindrome2
+
+    return longest
