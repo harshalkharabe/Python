@@ -1865,5 +1865,3 @@ def find_subarray(s1,s2):
 
     return max_length
 
-
-print("hello world")
