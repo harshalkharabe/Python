@@ -22,4 +22,5 @@ from firstapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('wish/', views.display),
+    path('time/', views.time),
 ]
