@@ -1865,3 +1865,12 @@ def find_subarray(s1,s2):
 
     return max_length
 
+# a = ['a','b','c','d','e']
+# Thrown memory run time error.
+# for i in a:
+    # a.append(i.upper()) 
+# print(a)
+
+
+res = str(bool(1)+float(10)/float(2))
+print(res)
