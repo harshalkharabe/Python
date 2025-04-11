@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split  # Splitting data into trai
 from sklearn.linear_model import LinearRegression  # Linear regression model
 from sklearn.metrics import mean_squared_error  # For evaluating model performance
 
-# Step 1: Sample stock data (you can use a real dataset instead)
+# Step 1: Sample stock data (you can use a real dataset instead) 
 data = {
     "Day": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],  # Independent variable (time)
     "Stock Price": [100, 101, 102, 103, 105, 108, 109, 112, 115, 120],  # Dependent variable (stock price)
