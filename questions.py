@@ -1871,6 +1871,4 @@ def find_subarray(s1,s2):
     # a.append(i.upper()) 
 # print(a)
 
-
-res = str(bool(1)+float(10)/float(2))
-print(res)
+print(str(bool(1)+float(10)/float(2)))
