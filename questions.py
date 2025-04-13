@@ -1862,13 +1862,13 @@ def find_subarray(s1,s2):
             if s1[i - 1] == s2[j - 1]:  
                 dp[i][j] = dp[i - 1][j - 1] + 1
                 max_length = max(max_length, dp[i][j])
-
     return max_length
 
-# a = ['a','b','c','d','e']
-# Thrown memory run time error.
-# for i in a:
-    # a.append(i.upper()) 
-# print(a)
 
 print(str(bool(1)+float(10)/float(2)))
+
+a = ['a','b','c','d','e']
+# Thrown memory run time error.
+for i in a:
+    a.append(i.upper()) 
+print(a)
