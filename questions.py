@@ -1889,3 +1889,20 @@ def find_subarray(s1,s2):
     return s1[end_index - max_length:end_index] if max_length > 0 else ""
 
 print(find_subarray("abcdxyz","xyzabcd"))
+
+
+def digital_root(n):
+    # ...
+    s=0
+    while True:
+        s = 0
+        while n>0:
+            r = n%10
+            s=s+r
+            n//=10
+        if s>9:
+            n=s
+        else:break
+    return s
+
+print(f"Sum of digit : {digital_root(942)}")
