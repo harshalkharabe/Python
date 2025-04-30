@@ -1,0 +1,6 @@
+email,language,subscription,notifications,theme,timezone,last_login,device,browser,marketing_opt_in
+alice@example.com,English,Pro,Yes,Dark,PST,2025-04-20,Mobile,Chrome,Yes
+bob@example.com,French,Free,No,Light,CST,2025-04-18,Desktop,Firefox,No
+charlie@example.com,Spanish,Pro,Yes,Dark,EST,2025-04-25,Laptop,Safari,Yes
+diana@example.com,German,Free,Yes,Light,EST,2025-04-22,Tablet,Edge,No
+ethan@example.com,English,Pro,No,Dark,CST,2025-04-21,Mobile,Chrome,Yes

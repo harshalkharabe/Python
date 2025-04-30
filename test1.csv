@@ -1,0 +1,6 @@
+user_id,name,email,phone,age,gender,country,state,city,zipcode
+1,Alice,alice@example.com,1234567890,28,Female,USA,California,Los Angeles,90001
+2,Bob,bob@example.com,0987654321,32,Male,USA,Texas,Dallas,75201
+3,Charlie,charlie@example.com,4567891230,25,Male,USA,New York,New York,10001
+4,Diana,diana@example.com,7890123456,29,Female,USA,Florida,Miami,33101
+5,Ethan,ethan@example.com,3216549870,35,Male,USA,Illinois,Chicago,60601
