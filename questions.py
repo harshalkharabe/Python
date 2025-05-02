@@ -1908,3 +1908,4 @@ def digital_root(n):
 print(f"Sum of digit : {digital_root(942)}")
 print(f"Sum of digit : {digital_root(94223)}")
 print(f"Sum of digit : {digital_root(9)}")
+print(f"Sum of digit : {digital_root(92)}")
