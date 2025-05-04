@@ -1866,6 +1866,7 @@ def find_subarray(s1,s2):
 
 
 print(str(bool(1)+float(10)/float(2)))
+print((bool(1)+float(10)/float(2)))
 # print(v)
 
 a = ['a','b','c','d','e']
