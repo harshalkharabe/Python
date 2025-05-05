@@ -1892,6 +1892,36 @@ def find_subarray(s1,s2):
 print(find_subarray("abcdxyz","xyzabcd"))
 
 
+from collections import Counter
+
+def can_equalize_frequency(s: str) -> bool:
+    freq = Counter(s)
+    freq_count = Counter(freq.values())
+
+    if len(freq_count) == 1:
+        # All characters have same frequency
+        return True
+
+    if len(freq_count) == 2:
+        (f1, c1), (f2, c2) = freq_count.items()
+
+        # Ensure f1 < f2 for easier logic
+        if f1 > f2:
+            f1, f2 = f2, f1
+            c1, c2 = c2, c1
+
+        # Case 1: One character occurs once and its frequency is 1
+        if f1 == 1 and c1 == 1:
+            return True
+
+        # Case 2: Frequencies differ by 1 and the higher one occurs only once
+        if f2 == f1 + 1 and c2 == 1:
+            return True
+
+    return False
+
+
+
 def digital_root(n):
     # ...
     s=0
