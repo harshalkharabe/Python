@@ -1939,3 +1939,45 @@ def digital_root(n):
 print(f"Sum of digit : {digital_root(942)}")
 print(f"Sum of digit : {digital_root(19)}")
 print(f"Sum of digit : {digital_root(92)}")
+
+
+def removeReverse(S):
+    from collections import Counter
+
+    freq = Counter(S)
+    s = list(S)
+    left, right = 0, len(s) - 1
+    direction = True  # True means left to right, False means right to left
+
+    while True:
+        found = False
+
+        if direction:
+            # Check from left to right
+            while left <= right:
+                if freq[s[left]] > 1:
+                    freq[s[left]] -= 1
+                    s.pop(left)
+                    right -= 1  # since we removed one from left
+                    found = True
+                    direction = not direction
+                    break
+                else:
+                    left += 1
+        else:
+            # Check from right to left
+            while right >= left:
+                if freq[s[right]] > 1:
+                    freq[s[right]] -= 1
+                    s.pop(right)
+                    right -= 1
+                    found = True
+                    direction = not direction
+                    break
+                else:
+                    right -= 1
+
+        if not found:
+            break
+
+    return ''.join(s)
