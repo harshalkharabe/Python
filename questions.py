@@ -1981,3 +1981,12 @@ def removeReverse(S):
             break
 
     return ''.join(s)
+
+
+def firstElementKTime(arr,k):
+        d1 = {}
+        for num in arr:
+            d1[num] = d1.get(num, 0) + 1
+            if d1[num] == k:
+                return num
+        return -1
