@@ -1990,3 +1990,5 @@ def firstElementKTime(arr,k):
             if d1[num] == k:
                 return num
         return -1
+
+firstElementKTime([12,12,1,322,32,4354],3)
