@@ -1992,3 +1992,31 @@ def firstElementKTime(arr,k):
         return -1
 
 firstElementKTime([12,12,1,322,32,4354],3)
+
+
+def find_rotation_count(arr):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        # If the subarray is already sorted, then arr[low] is the minimum
+        if arr[low] <= arr[high]:
+            return low
+
+        mid = (low + high) // 2
+        next_ = (mid + 1) % len(arr)
+        prev = (mid - 1 + len(arr)) % len(arr)
+
+        # Check if mid is the minimum
+        if arr[mid] <= arr[prev] and arr[mid] <= arr[next_]:
+            return mid
+
+        # Decide which half to go to
+        if arr[mid] >= arr[low]:
+            # Left part is sorted, go to right
+            low = mid + 1
+        else:
+            # Right part is sorted, go to left
+            high = mid - 1
+
+    return 0  # Default case
