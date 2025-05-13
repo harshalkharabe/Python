@@ -2020,3 +2020,5 @@ def find_rotation_count(arr):
             high = mid - 1
 
     return 0  # Default case
+
+print(find_rotation_count([3,4,5,1,2]))
