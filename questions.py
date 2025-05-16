@@ -2022,5 +2022,3 @@ def find_rotation_count(arr):
     return 0  # Default case
 
 print(find_rotation_count([3,4,5,1,2]))
-print(find_rotation_count([21,21,3243,424,565,6,5476]))
-print(find_rotation_count([21,21,3243,424,565,6,54,7,6]))
