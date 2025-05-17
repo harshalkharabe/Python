@@ -1999,7 +1999,6 @@ def find_rotation_count(arr):
     high = len(arr) - 1
 
     while low <= high:
-        # If the subarray is already sorted, then arr[low] is the minimum
         if arr[low] <= arr[high]:
             return low
 
@@ -2007,18 +2006,28 @@ def find_rotation_count(arr):
         next_ = (mid + 1) % len(arr)
         prev = (mid - 1 + len(arr)) % len(arr)
 
-        # Check if mid is the minimum
         if arr[mid] <= arr[prev] and arr[mid] <= arr[next_]:
             return mid
 
-        # Decide which half to go to
         if arr[mid] >= arr[low]:
-            # Left part is sorted, go to right
             low = mid + 1
         else:
-            # Right part is sorted, go to left
             high = mid - 1
 
-    return 0  # Default case
+    return 0
 
 print(find_rotation_count([3,4,5,1,2]))
+
+def lcs(s1, s2):
+    m, n = len(s1), len(s2)
+    dp = [[0]*(n+1) for _ in range(m+1)]
+
+    # Fill the DP table
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if s1[i-1] == s2[j-1]:
+                dp[i][j] = 1 + dp[i-1][j-1]
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+
+    return dp[m][n]
