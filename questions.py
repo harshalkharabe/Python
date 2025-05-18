@@ -2031,3 +2031,12 @@ def lcs(s1, s2):
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1])
 
     return dp[m][n]
+
+seen = set()
+result = []
+
+for char in s:
+    if char not in seen:
+        seen.add(char)
+        result.append(char)
+    s = ''.join(result)
