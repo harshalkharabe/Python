@@ -2035,8 +2035,9 @@ def lcs(s1, s2):
 seen = set()
 result = []
 
-for char in s:
-    if char not in seen:
-        seen.add(char)
-        result.append(char)
-    s = ''.join(result)
+def remove_duplicates(s):
+    for char in s:
+        if char not in seen:
+            seen.add(char)
+            result.append(char)
+        return ''.join(result)
