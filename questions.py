@@ -2057,5 +2057,6 @@ def roman_to_int(s):
         else:
             total += curr_value
             prev_value = curr_value
-
     return total
+
+print(roman_to_int("iijfd"))
