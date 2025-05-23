@@ -2058,3 +2058,12 @@ def roman_to_int(s):
             total += curr_value
             prev_value = curr_value
     return total
+
+from collections import Counter
+
+class Solution:
+    def findMajority(self, arr):
+        n = len(arr) // 3
+        count = Counter(arr)  # O(n)
+        result = [num for num, freq in count.items() if freq > n]
+        return sorted(result)
