@@ -2067,3 +2067,4 @@ class Solution:
         count = Counter(arr)  # O(n)
         result = [num for num, freq in count.items() if freq > n]
         return sorted(result)
+
