@@ -2068,3 +2068,16 @@ class Solution:
         result = [num for num, freq in count.items() if freq > n]
         return sorted(result)
 
+def duplicates(s):
+    if not s:
+        return ""
+    
+    result = [s[0]]
+    
+    for i in range(1, len(s)):
+        if s[i] != s[i - 1]:
+            result.append(s[i])
+    
+    return ''.join(result)
+
+print(duplicates("strlen"))
