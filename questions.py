@@ -2081,3 +2081,4 @@ def duplicates(s):
     return ''.join(result)
 
 print(duplicates("harshal"))
+print(duplicates("prathamesh"))
