@@ -2080,4 +2080,4 @@ def duplicates(s):
     
     return ''.join(result)
 
-print(duplicates("strlen"))
+print(duplicates("harshal"))
