@@ -2087,3 +2087,24 @@ def twoSum(nums, target):
         for j in range(i+1,len(nums)):
             if nums[i]+nums[j]==target:
                 return [i,j]
+
+
+# Function to find maximum
+# product subarray
+def maxProduct(arr):
+    # code here
+    if not arr:
+        return 0
+    max_product = arr[0]
+    min_product = arr[0]       
+    result = arr[0]       
+    for i in range(1,len(arr)):
+        num = arr[i]
+        temp_max = max(num,num*max_product,num*min_product)
+        min_product = min(num,num*max_product,num*min_product)
+        max_product = temp_max
+        result = max(result,max_product)
+    return result
+
+
+print(maxProduct([2, 3, -2, 4])) #output : 6
