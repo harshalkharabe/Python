@@ -2108,3 +2108,4 @@ def maxProduct(arr):
 
 
 print(maxProduct([2, 3, -2, 4])) #output : 6
+print(maxProduct([2, 3, -2, 4])) #output : 6
