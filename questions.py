@@ -2109,3 +2109,17 @@ def maxProduct(arr):
 
 print(maxProduct([2, 3, -2, 4])) #output : 6
 print(maxProduct([2, 3, -2, 4])) #output : 6
+
+# min cost to climb stairs at top.
+def climbing_steps(cost):
+    n = len(cost)
+    ele1 = cost[0]
+    ele2 = cost[1]
+
+    for i in range(2,n):
+        curr = cost[i]+min(ele1,ele2)
+        ele1=ele2
+        ele2=curr
+    return min(ele1,ele2)
+
+print(climbing_steps([10,15,20]))
