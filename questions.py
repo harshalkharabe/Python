@@ -2123,3 +2123,17 @@ def climbing_steps(cost):
     return min(ele1,ele2)
 
 print(climbing_steps([10,15,20]))
+
+# stock buy and sell max profit.
+def max_profit(prices):
+    min_price = float('inf')
+    max_profit = 0
+    for price in prices:
+        if price<min_price:
+            min_price = price
+        else:
+            profit = price - min_price
+            max_profit = max(profit,max_profit)
+    return max_profit
+
+print("Max profit :",max_profit([1,2,3,4,5,6])) # output : 5
