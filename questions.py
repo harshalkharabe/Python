@@ -2139,7 +2139,7 @@ def max_profit(prices):
 print("Max profit :",max_profit([1,2,3,4,5,6])) # output : 5
 
 class Solution:
-    def compress(self, chars: List[str]) -> int:
+    def compress(self, chars) -> int:
         write = 0
         read = 0
 
@@ -2160,3 +2160,5 @@ class Solution:
                     write += 1
 
         return write
+s1 = Solution()
+print(s1.compress("dsklcjdnojdnfamdk".split()))
