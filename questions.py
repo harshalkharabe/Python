@@ -2162,3 +2162,18 @@ class Solution:
         return write
 s1 = Solution()
 print(s1.compress("dsklcjdnojdnfamdk".split()))
+
+
+class Solution:
+    def circularSubarraySum(self, arr):
+    # code here
+        n = len(arr)
+        res = arr[0]
+        for i in range(n):
+            currsum=0
+            for j in range(n):
+                idx = (i+j)%n
+                currsum += arr[idx]
+                res = max(res,currsum)
+        return res
+        
