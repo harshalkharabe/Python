@@ -2177,4 +2177,5 @@ class Solution:
                 res = max(res,currsum)
         return res
 s2 = Solution()
-print(s2.circularSubarraySum([5, -2, 3, 4, -1, 2, -3, 6])) # Output: 15
+subarr = s2.circularSubarraySum([5, -2, 3, 4, -1, 2, -3, 6]) # Output: 15
+print(f"Subarray sum : {subarr}")
