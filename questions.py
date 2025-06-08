@@ -2179,3 +2179,13 @@ class Solution:
 s2 = Solution()
 subarr1 = s2.circularSubarraySum([5, -2, 3, 4, -1, 2, -3, 6]) # Output: 15
 print(f"Subarray sum : {subarr1}")
+
+def fun(arr):
+    start = 0
+    end = n - 1
+    while start < end:
+        if arr[start] > arr[end]:
+            start += 1
+        else:
+            end -= 1
+    return arr[start]
