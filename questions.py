@@ -2189,3 +2189,9 @@ def fun(arr):
         else:
             end -= 1
     return arr[start]
+
+def pivotIndex(nums) -> int:
+    for i in range(len(nums)):
+        if (sum(nums[:i])+0)==(0+sum(nums[i+1:])):
+            return i
+    return -1
