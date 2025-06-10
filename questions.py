@@ -2195,3 +2195,15 @@ def pivotIndex(nums) -> int:
         if (sum(nums[:i])+0)==(0+sum(nums[i+1:])):
             return i
     return -1
+
+def groupAnagrams(strs):
+    l1=[]
+    for i in range(len(strs)):
+        l2=[]
+        for j in range(len(strs)):
+            if strs[i] in strs[j]:
+                l2.append(strs[j])
+        l1.append(l1)
+    return l1
+
+print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
