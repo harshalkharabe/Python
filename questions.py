@@ -2207,3 +2207,5 @@ def groupAnagrams(strs):
     return l1
 
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+
+print("5"+"2")
