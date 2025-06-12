@@ -2206,6 +2206,4 @@ def groupAnagrams(strs):
         l1.append(l1)
     return l1
 
-print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
-
-print("5"+"2")
+res = groupAnagrams(["eat","tea","tan","ate","nat","bat"])
