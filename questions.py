@@ -2207,3 +2207,4 @@ def groupAnagrams(strs):
     return l1
 
 res = groupAnagrams(["eat","tea","tan","ate","nat","bat"])
+print(res)
