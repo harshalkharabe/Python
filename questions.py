@@ -2208,3 +2208,22 @@ def groupAnagrams(strs):
 
 res = groupAnagrams(["eat","tea","tan","ate","nat","bat"])
 print(res)
+
+class Solution:
+    def findMaxAverage(self, nums):
+        s = sum(nums[:k])
+        m = s
+        for i in range(k, len(nums)):
+            s += nums[i] - nums[i - k]
+            if s > m:
+                m = s
+        return m / float(k)
+    
+    def groupAnagrams(self, strs):
+        dict1 = {}
+        for word in strs:
+            sorted_word = ''.join(sorted(word))
+            if sorted_word not in dict1:
+                dict1[sorted_word] = []
+            dict1[sorted_word].append(word)
+        return list(dict1.values())
