@@ -2227,3 +2227,32 @@ class Solution:
                 dict1[sorted_word] = []
             dict1[sorted_word].append(word)
         return list(dict1.values())
+
+arr = [20,33,4,3253235,235,245,5,325]
+x = 235
+def find(arr):
+    for i in range(len(arr)):
+        if arr[i]==x:
+            return i
+    return -1
+print(f"Result : {find(arr)}")
+
+def binarysearch(arr,x):
+    arr.sort()
+    lb = 0
+    ub = len(arr) - 1
+    mid = len(arr) // 2
+    while lb <= ub:
+        if arr[mid] == x:
+            return mid
+        elif arr[mid]<x:
+            lb = mid + 1
+        elif arr[mid]>x:
+            ub = mid - 1
+        mid = (lb + ub) // 2
+        return mid
+    return -1
+arr = [1,3232,4,354,325,325,325,5,35,5,9]
+x = 9
+print(f"Middle index : {binarysearch(arr,x)}")
+    
