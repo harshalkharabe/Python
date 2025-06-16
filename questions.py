@@ -2228,6 +2228,25 @@ class Solution:
             dict1[sorted_word].append(word)
         return list(dict1.values())
 
+    def longestSubarray(self, nums):
+        n = len(nums)
+
+        left = 0
+        zeros = 0
+        ans = 0
+
+        for right in range(n):
+            if nums[right] == 0:
+                zeros += 1
+
+            while zeros > 1:
+                if nums[left] == 0:
+                    zeros -= 1
+                left += 1
+
+            ans = max(ans, right - left + 1 - zeros)
+
+        return ans - 1 if ans == n else ans
 arr = [20,33,4,3253235,235,245,5,325]
 x = 235
 def find(arr):
