@@ -100,3 +100,27 @@ def find_element_2d(arr, target):
 target = 12
 result = find_element_2d(arr, target)
 print(f"Element {target} found at position: {result}")  # Output: Element 12 found at position: (1, 1)
+
+# Ternary Search
+def teranary_search(arr, mid1, mid2, target):
+    while left<right:
+        if arr[mid1]==target:
+            return mid1
+        elif arr[mid2]==target:
+            return mid2
+        elif arr[mid1]>target:
+            return teranary_search(arr, left, mid1 - 1, target)
+        elif arr[mid2]<target:
+            return teranary_search(arr, mid2 + 1, right, target)
+        else:
+            return teranary_search(arr, mid1 + 1, mid2 - 1, target)
+    return -1
+
+arr = [20,25,47,56,59,63,70,80,90,100]
+target = 90
+left, right = 0, len(arr) - 1
+mid1 = left + (right - left) // 3
+mid2 = right - (right - left) // 3
+result = teranary_search(arr, mid1, mid2, target)
+print(f"Element {target} found at index: {result}")  # Output: Element 59 found at index: 4
+

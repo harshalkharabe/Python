@@ -2274,4 +2274,14 @@ def binarysearch(arr,x):
 arr = [1,3232,4,354,325,325,325,5,35,5,9]
 x = 9
 print(f"Middle index : {binarysearch(arr,x)}")
-    
+
+
+
+from collections import Counter
+def closeStrings(self, word1: str, word2: str) -> bool:
+    if len(word1)!=len(word2):
+        return False
+    if set(word1) == set(word2):
+        cnt1, cnt2 = Counter(word1), Counter(word2)
+        return True if sorted(cnt1.values()) == sorted(cnt2.values()) else False
+    return False
