@@ -124,3 +124,54 @@ mid2 = right - (right - left) // 3
 result = teranary_search(arr, mid1, mid2, target)
 print(f"Element {target} found at index: {result}")  # Output: Element 59 found at index: 4
 
+#==================================== Sorting ====================================================
+
+# Bubble Sort
+def bubble_sort(arr):
+    for i in range(len(arr)):
+        for j in range(0,len(arr)-i-1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+arr = [64, 34, 25, 12, 22, 11, 90]
+sorted_arr = bubble_sort(arr)
+print(f"Sorted array using Bubble Sort: {sorted_arr}")  # Output: Sorted array using Bubble Sort: [11, 12, 22, 25, 34, 64, 90]
+
+
+# Selection Sort
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+arr = [64, 25, 12, 22, 11]
+sorted_arr = selection_sort(arr)
+print(f"Sorted array using Selection Sort: {sorted_arr}")  # Output: Sorted array using Selection Sort: [11, 12, 22, 25, 64]
+
+# my selection sort implementation
+def selection_sort(arr):
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr
+arr = [64, 25, 12, 22, 11]
+sorted_arr = selection_sort(arr)
+print(f"Sorted array using Selection Sort: {sorted_arr}")  # Output: Sorted array using Selection Sort: [11, 12, 22, 25, 64]
+
+# Insertion Sort
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        j=i-1
+        key = arr[i]
+        while j>=0 and arr[j]>key:
+            arr[j+1]=arr[j]
+            j = j-1
+        arr[j+1] = key
+    return arr
+arr = [64, 34, 25, 12, 22, 11, 90]
+sorted_arr = insertion_sort(arr)
+print(f"Sorted array using Insertion Sort: {sorted_arr}")  # Output: Sorted array using Insertion Sort: [11, 12, 22, 25, 34, 64, 90]
