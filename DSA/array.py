@@ -175,3 +175,5 @@ def insertion_sort(arr):
 arr = [64, 34, 25, 12, 22, 11, 90]
 sorted_arr = insertion_sort(arr)
 print(f"Sorted array using Insertion Sort: {sorted_arr}")  # Output: Sorted array using Insertion Sort: [11, 12, 22, 25, 34, 64, 90]
+
+# Heap Sort
