@@ -2285,3 +2285,5 @@ def closeStrings(self, word1: str, word2: str) -> bool:
         cnt1, cnt2 = Counter(word1), Counter(word2)
         return True if sorted(cnt1.values()) == sorted(cnt2.values()) else False
     return False
+
+
