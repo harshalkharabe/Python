@@ -100,3 +100,4 @@ def move_zeros(arr):
     return arr
 arr = [0, 1, 0, 3, 12]
 print(f"Array after moving zeros to end: {move_zeros(arr)}")  # Output: [1, 3, 12, 0, 0]
+print(f"Array after moving zeros to end: {move_zeros(arr)}")  # Output: [1, 3, 12, 0, 0]
