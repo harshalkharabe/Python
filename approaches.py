@@ -88,6 +88,7 @@ def is_palindrome(s):
     return True
 
 s = "racecar"
+s = "madam"
 print(f"Is the string '{s}' a palindrome? {is_palindrome(s)}")  # Output: True
 
 # Move Zeros to End
