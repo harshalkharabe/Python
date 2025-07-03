@@ -2287,3 +2287,11 @@ def closeStrings(self, word1: str, word2: str) -> bool:
     return False
 
 
+def removeStars(self, s: str) -> str:
+    stack = []
+    for char in s:
+        if char == '*':
+            stack.pop()
+        else:
+            stack.append(char)
+    return "".join(stack)
