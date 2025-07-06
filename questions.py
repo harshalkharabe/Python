@@ -2295,3 +2295,5 @@ def removeStars(self, s: str) -> str:
         else:
             stack.append(char)
     return "".join(stack)
+
+removeStars()
