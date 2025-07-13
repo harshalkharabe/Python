@@ -2296,4 +2296,7 @@ def removeStars(self, s: str) -> str:
             stack.append(char)
     return "".join(stack)
 
-removeStars()
+# removeStars()
+
+
+print(False == False in [False])
