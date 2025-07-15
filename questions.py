@@ -2287,7 +2287,7 @@ def closeStrings(self, word1: str, word2: str) -> bool:
     return False
 
 
-def removeStars(self, s: str) -> str:
+def removeStars(s: str) -> str:
     stack = []
     for char in s:
         if char == '*':
@@ -2296,7 +2296,22 @@ def removeStars(self, s: str) -> str:
             stack.append(char)
     return "".join(stack)
 
-# removeStars()
+def find_maxsum_subarray(arr):
+    max_sum = currentsum = arr[0]
+    for num in arr[1:]:
+        currentsum = max(num, currentsum + num)
+        max_sum = max(max_sum, currentsum)
+    return max_sum
 
+def maxproduct_subarray(arr):
+    # arr = [2, 3, -2, 4]
+    max_product = min_product = result = arr[0]
+    for num in arr[1:]:
+        choices = (num,num*max_product,num*min_product)
+        max_product = max(choices)
+        min_product = min(choices)
+        result = max(result,max_product)
+    return result
+# output : 6
 
-print(False == False in [False])
+# Find All Subarrays with 0 Sum
