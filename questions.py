@@ -2312,6 +2312,4 @@ def maxproduct_subarray(arr):
         min_product = min(choices)
         result = max(result,max_product)
     return result
-# output : 6
-
-# Find All Subarrays with 0 Sum
+# o/p = 6
