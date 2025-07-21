@@ -2312,4 +2312,4 @@ def maxproduct_subarray(arr):
         min_product = min(choices)
         result = max(result,max_product)
     return result
-# o/p = 6
+# output : 6
